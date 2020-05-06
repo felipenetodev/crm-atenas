@@ -19,10 +19,6 @@ import edu.uniatenas.crm.cliente.ClienteService;
 @Controller
 @RequestMapping("/cliente")
 public class ClienteWeb {
-	
-	
-	
-	
 	@Autowired
 	private ClienteService  service;
 	@GetMapping()
