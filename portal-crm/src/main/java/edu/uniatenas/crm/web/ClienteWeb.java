@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.uniatenas.crm.cliente.Cliente;
-import edu.uniatenas.crm.cliente.ClienteService;
+import edu.uniatenas.crm.cliente.entity.Cliente;
+import edu.uniatenas.crm.cliente.service.ClienteService;
 
 @Controller
 @RequestMapping("/cliente")

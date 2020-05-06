@@ -1,9 +1,12 @@
-package edu.uniatenas.crm.cliente;
+package edu.uniatenas.crm.cliente.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import edu.uniatenas.crm.cliente.entity.Cliente;
+import edu.uniatenas.crm.cliente.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
