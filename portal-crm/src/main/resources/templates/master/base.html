@@ -60,7 +60,6 @@
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
-
 						<li class="nav-item has-treeview menu-open"><a href="#"
 							class="nav-link active"> <i
 								class="nav-icon fas fa-tachometer-alt"></i>
@@ -81,35 +80,135 @@
 								<p>Leads</p>
 						</a></li>
 				</nav>
-
 			</div>
 
 		</aside>
-
 		<div class="content-wrapper">
 			<div class="content-header">
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Título da Página</h1>
+							<h1 class="m-0 text-dark">Cadastro de Cliente</h1>
 						</div>
-
-						<div class="col-sm-6">
+						<div class="col-sm-6 mt-3">
 							<ol class="breadcrumb float-sm-right">
 								<li class="breadcrumb-item"><a href="#">Home</a></li>
 								<li class="breadcrumb-item active">Menu Ativo</li>
 							</ol>
 						</div>
+						<div class="col-lg-8">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 m-t-12">
+										<form role="form" action = "/save" >
+											<div class="form-group">
+												<label for="Nome"> Nome: </label> <input
+													class="form-control" id="Nome" />
+											</div>
+											<div class="form-group">
+												<label for="Sobrenome"> Sobrenome: </label> <input
+													class="form-control" id="Sobrenome" />
+											</div>
+											<div class="form-group">
+												<label for="Email"> E-Mail: </label> <input
+													class="form-control" id="Email" />
+											</div>
+											<div class="row">
+												<div class="col-sm-2">
+													<div class="form-group">
+														<label for="EstadoNatal"> Estado Natal: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-10">
+													<div class="form-group">
+														<label for="CidadeNatal"> Cidade Natal: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-12">
+													<div class="form-group">
+														<label for=""> Naturalidade: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-2">
+													<div class="form-group">
+														<label for="EstadoNatal"> Sexo: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-10">
+													<div class="form-group">
+														<label for="CidadeNatal"> Estado Civil: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-2">
+													<div class="form-group">
+														<label for="EstadoNatal"> Nacionalidade: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-10">
+													<div class="form-group">
+														<label for="CidadeNatal"> Grau de Instrução: </label> <select
+															class="form-control">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+													</div>
+												</div>
 
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="EstadoNatal"> Telefone: </label> <input
+															class="form-control" id="Sobrenome" />
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="CidadeNatal"> Telefone Complementar: </label>
+														<input class="form-control" id="Sobrenome" />
+													</div>
+												</div>
+											</div>
+											<button type="submit" class="btn btn-primary">Enviar</button>
+											<button type="reset" class="btn btn-danger">Cancelar</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
 				</div>
-
 			</div>
-
-			<section class="content">
-				<div class="container-fluid" layout:fragment="content"></div>
-			</section>
+			<section class="content"></section>
 		</div>
 		<footer class="main-footer">
 			<strong>Copyright &copy; 2020 <a href="http://atenas.edu.br">Uniatenas</a>.
@@ -131,8 +230,8 @@
 		src="plugins/jquery-ui/jquery-ui.min.js"></script>
 
 	<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+		$.widget.bridge('uibutton', $.ui.button)
+	</script>
 
 	<script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"
 		src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

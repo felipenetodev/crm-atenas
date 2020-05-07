@@ -45,6 +45,7 @@ public class Cliente implements Serializable{
 	private String telefoneComplementar;
 	private String CPF;
 	private String documentoComplementar;
+	
 	public Long getId() {
 		return id;
 	}

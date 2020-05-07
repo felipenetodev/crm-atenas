@@ -30,7 +30,7 @@ public class ClienteWeb {
 	
 	@RequestMapping("/novo")
 	public ModelAndView create() {
-		ModelAndView view = new ModelAndView("cliente");
+		ModelAndView view = new ModelAndView("cliente-form");
 		view.addObject("cliente", new Cliente());
 		return view;
 	}
@@ -44,6 +44,5 @@ public class ClienteWeb {
 		}else {
 			return "Um erro aconteceu!";
 		}
-	}
-		
+	}	
 }
