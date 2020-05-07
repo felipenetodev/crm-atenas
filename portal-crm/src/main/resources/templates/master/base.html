@@ -117,30 +117,23 @@
 												<div class="col-sm-2">
 													<div class="form-group">
 														<label for="EstadoNatal"> Estado Natal: </label> <select
-															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+															class="form-control" id = "estados">
+															
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-10">
 													<div class="form-group">
 														<label for="CidadeNatal"> Cidade Natal: </label> <select
-															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+															class="form-control" id = "cidades">
+															
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-12">
 													<div class="form-group">
-														<label for=""> Naturalidade: </label> <select
-															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+														<label for=""> Naturalidade: </label>
+														<select class="form-control" id = "naturalidade">
 														</select>
 													</div>
 												</div>
@@ -148,9 +141,8 @@
 													<div class="form-group">
 														<label for="EstadoNatal"> Sexo: </label> <select
 															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+															<option>Masculino</option>
+															<option>Feminino</option>
 														</select>
 													</div>
 												</div>
@@ -158,19 +150,17 @@
 													<div class="form-group">
 														<label for="CidadeNatal"> Estado Civil: </label> <select
 															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+															<option>Solteiro</option>
+															<option>Casado</option>													
+															<option>Divorciado</option>
+															<option>Viúvo</option>
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-2">
 													<div class="form-group">
-														<label for="EstadoNatal"> Nacionalidade: </label> <select
-															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+														<label for="EstadoNatal"> Nacionalidade: </label> 
+														<select class="form-control" id = "nacionalidade">
 														</select>
 													</div>
 												</div>
@@ -178,9 +168,10 @@
 													<div class="form-group">
 														<label for="CidadeNatal"> Grau de Instrução: </label> <select
 															class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
+															<option>Ensino Médio Completo</option>
+															<option>Ensino Médio incompleto</option>
+															<option>Ensino Superior Completo</option>
+															<option>Ensino Superior incompleto</option>
 														</select>
 													</div>
 												</div>
@@ -188,7 +179,7 @@
 												<div class="col-sm-6">
 													<div class="form-group">
 														<label for="EstadoNatal"> Telefone: </label> <input
-															class="form-control" id="Sobrenome" />
+															class="form-control" id="telefone" />
 													</div>
 												</div>
 												<div class="col-sm-6">
@@ -261,5 +252,6 @@
 	<script th:src="@{/dist/js/pages/dashboard.js}"
 		src="dist/js/pages/dashboard.js"></script>
 	<script th:src="@{/dist/js/demo.js}" src="dist/js/demo.js"></script>
+	<script th:src="@{/dist/js/cad-cliente.js}" src="dist/js/cad-cliente.js" charset="utf-8"></script>
 </body>
 </html>
