@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -26,9 +28,13 @@ public class Cliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotBlank
 	private String nome;
+	@NotBlank
 	private String sobrenome;
+	@NotBlank
 	private String estadoNatal;
+	@NotBlank
 	private String naturalidade;
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	@Temporal(TemporalType.DATE)
@@ -37,12 +43,17 @@ public class Cliente implements Serializable{
 	private Sexo sexo;
 	@Enumerated(EnumType.STRING)
 	private EstadoCivil estadoCivil;
+	@NotBlank
+	@Email
 	private String email;
+	@NotBlank
 	private String nacionalidade;
 	@Enumerated(EnumType.STRING)
 	private Grau grauDeInstrucao;
+	@NotBlank
 	private String telefonePrincipal;
 	private String telefoneComplementar;
+	@NotBlank
 	private String CPF;
 	private String documentoComplementar;
 	
@@ -136,6 +147,7 @@ public class Cliente implements Serializable{
 	public void setDocumentoComplementar(String documentoComplementar) {
 		this.documentoComplementar = documentoComplementar;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -234,6 +246,4 @@ public class Cliente implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 }

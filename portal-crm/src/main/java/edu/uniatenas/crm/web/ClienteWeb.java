@@ -37,12 +37,12 @@ public class ClienteWeb {
 	
 	@PostMapping("/save")
 	@ResponseBody
-	public String save(@Valid Cliente cliente, BindingResult reults) {
-		if(!reults.hasErrors()) {
+	public String save(@Valid Cliente cliente, BindingResult results) {
+		if(!results.hasErrors()) {
 			service.saveCliete(cliente);
 			return "Dados salvos com sucesso!";
 		}else {
-			System.out.println(reults.getAllErrors());
+			System.out.println(results.getAllErrors());
 			return "Um erro aconteceu!";
 		}
 	}	
