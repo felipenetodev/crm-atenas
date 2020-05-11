@@ -21,7 +21,8 @@ import edu.uniatenas.crm.cliente.service.ClienteService;
 public class ClienteWeb {
 	@Autowired
 	private ClienteService  service;
-	@GetMapping()
+	
+	@GetMapping("/todos")
 	public ModelAndView list(){
 		ModelAndView view = new ModelAndView("cliente-list");
 		view.addObject("clientes",service.getAllClientes());
