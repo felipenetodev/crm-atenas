@@ -14,7 +14,4 @@ public enum EstadoCivil {
 	public String getName() {
 		return name;
 	}
-
-
-
 }

@@ -7,14 +7,11 @@ public enum Grau {
 	SUPERIOR_INCOMPLETO("Ensino Superior incompleto");
 	String name;
 
-	private Grau(String name) {
+	private Grau(String name) {	
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	
-	
+	}	
 }

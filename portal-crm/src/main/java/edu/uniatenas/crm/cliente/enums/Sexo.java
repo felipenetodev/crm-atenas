@@ -1,19 +1,15 @@
 package edu.uniatenas.crm.cliente.enums;
 
 public enum Sexo {
-	
-	
 	MASCULINO("Masculino"),
 	FEMININO("Feminino");
 	String name;
 	
-	Sexo(String name) {
+	private Sexo(String name) {
 		this.name = name;
 	}
 
-	String  getName(String name) {
+	public String getName() {
 		return name;
-	}
-	
-	
+	}	
 }

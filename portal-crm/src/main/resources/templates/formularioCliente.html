@@ -118,71 +118,87 @@
 											<div class="row">
 												<div class="col-sm-2">
 													<div class="form-group">
-														<label for="EstadoNatal"> Estado Natal: </label> 
-														<select class="form-control" id="estados" th:field="*{estadoNatal}"></select>
+														<label for="EstadoNatal"> Estado Natal: </label> <select
+															class="form-control" id="estados"
+															th:field="*{estadoNatal}"></select>
 													</div>
 												</div>
-												<div class="col-sm-10">
+												<div class="col-sm-3">
 													<div class="form-group">
-														<label for="Cpf"> CPF: </label> 
-														<input class="form-control" id="CPF" th:field="*{CPF}"/>
+														<label for="dataNascimento"> Data de Nascimento: </label>
+														<input class="form-control" id="dataNascimento"
+															th:field="*{dtNascimento}" type='date' />
+													</div>
+												</div>
+												<div class="col-sm-7">
+													<div class="form-group">
+														<label for="Cpf"> CPF: </label> <input
+															class="form-control" id="CPF" th:field="*{CPF}" />
 													</div>
 												</div>
 												<div class="col-sm-12">
 													<div class="form-group">
-														<label for=""> Naturalidade: </label> 
-														<select class="form-control" id="naturalidade" th:field="*{naturalidade}"></select>
+														<label for=""> Naturalidade: </label> <select
+															class="form-control" id="naturalidade"
+															th:field="*{naturalidade}"></select>
 													</div>
 												</div>
 												<div class="col-sm-2">
 													<div class="form-group">
-														<label for="Sexo"> Sexo: 
-														</label> 
-															<select class="form-control" th:field="*{sexo}">
-															<option th:value="'M'">Masculino</option>
-															<option th:value="'F'">Feminino</option>
+														<label for="Sexo"> Sexo: </label> 
+														<select th:field="*{sexo}" class="form-control">
+															<option th:each="s : ${T(edu.uniatenas.crm.cliente.enums.Sexo).values()}"
+																th:value="${s}" th:text="${s.name}"></option>
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-10">
 													<div class="form-group">
-														<label for="CidadeNatal"> Estado Civil: </label> <select
-															class="form-control" th:field="*{estadoCivil}">
-															<option th:value="'Solteiro'">Solteiro</option>
-															<option th:value="'Casado'">Casado</option>
-															<option th:value="'Divorciado'">Divorciado</option>
-															<option th:value="'Viúvo'">Viúvo</option>
+														<label for="estadoCivil"> Estado Civil: </label> <select
+															th:field="*{estadoCivil}" class="form-control">
+															<option
+																th:each="e : ${T(edu.uniatenas.crm.cliente.enums.EstadoCivil).values()}"
+																th:value="${e}" th:text="${e.name}"></option>
 														</select>
 													</div>
 												</div>
 												<div class="col-sm-2">
 													<div class="form-group">
-														<label for="Nacionalidade"> Nacionalidade: </label> 
-														<select class="form-control" id="nacionalidade" th:field="*{nacionalidade}"></select>
+														<label for="Nacionalidade"> Nacionalidade: </label> <select
+															class="form-control" id="nacionalidade"
+															th:field="*{nacionalidade}"></select>
 													</div>
 												</div>
 												<div class="col-sm-10">
 													<div class="form-group">
-														<label for="CidadeNatal"> Grau de Instrução: </label> <select
-															class="form-control" th:field="*{grauDeInstrucao}">
-															<option th:value="'Ensino Médio Completo'">Ensino Médio Completo</option>
-															<option th:value="'Ensino Médio incompleto'" >Ensino Médio incompleto</option>
-															<option th:value="'Ensino Superior Completo'">Ensino Superior Completo</option>
-															<option th:value="'Ensino Superior incompleto'">Ensino Superior incompleto</option>
+														<label for="CidadeNatal"> Grau de Instrução: </label> 
+															<select class="form-control" th:field="*{grauDeInstrucao}">														
+															<option
+																th:each="g : ${T(edu.uniatenas.crm.cliente.enums.Grau).values()}"
+																th:value="${g}" th:text="${g.name}"></option>
 														</select>
 													</div>
 												</div>
 
 												<div class="col-sm-6">
 													<div class="form-group">
-														<label for="Telefone"> Telefone: </label> 
-														<input class="form-control" id="telefone" th:field="*{telefonePrincipal}"/>
+														<label for="Telefone"> Telefone: </label> <input
+															class="form-control" id="telefone"
+															th:field="*{telefonePrincipal}" />
 													</div>
 												</div>
 												<div class="col-sm-6">
 													<div class="form-group">
 														<label for="CidadeNatal"> Telefone Complementar: </label>
-														<input class="form-control" id="telefoneComplementar" th:field="*{telefoneComplementar}"/>
+														<input class="form-control" id="telefoneComplementar"
+															th:field="*{telefoneComplementar}" />
+													</div>
+												</div>
+												<div class="col-sm-12">
+													<div class="form-group">
+														<label for="documentoComplementar"> Documento Complementar: </label>
+														<input class="form-control" id="documentoComplementar"
+															th:field="*{documentoComplementar}" />
 													</div>
 												</div>
 											</div>
@@ -244,11 +260,14 @@
 		src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 	<script th:src="@{/plugins/summernote/summernote-bs4.min.js}"
 		src="plugins/summernote/summernote-bs4.min.js"></script>
-	<script th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}" 
-	src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+	<script
+		th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}"
+		src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script th:src="@{/dist/js/adminlte.js}" src="dist/js/adminlte.js"></script>
-	<script th:src="@{/dist/js/pages/dashboard.js}"src="dist/js/pages/dashboard.js"></script>
+	<script th:src="@{/dist/js/pages/dashboard.js}"
+		src="dist/js/pages/dashboard.js"></script>
 	<script th:src="@{/dist/js/demo.js}" src="dist/js/demo.js"></script>
-	<script th:src="@{/dist/js/cad-cliente.js}"src="dist/js/cad-cliente.js" charset="utf-8"></script>
+	<script th:src="@{/dist/js/cad-cliente.js}"
+		src="dist/js/cad-cliente.js" charset="utf-8"></script>
 </body>
 </html>

@@ -42,6 +42,7 @@ public class ClienteWeb {
 			service.saveCliete(cliente);
 			return "Dados salvos com sucesso!";
 		}else {
+			System.out.println(reults.getAllErrors());
 			return "Um erro aconteceu!";
 		}
 	}	
