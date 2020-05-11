@@ -30,7 +30,7 @@ public class ClienteWeb {
 	
 	@RequestMapping("/novo")
 	public ModelAndView create() {
-		ModelAndView view = new ModelAndView("cliente-form");
+		ModelAndView view = new ModelAndView("formularioCliente");
 		view.addObject("cliente", new Cliente());
 		return view;
 	}
