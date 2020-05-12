@@ -1,85 +1,39 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{master/base}">
+<h3 layout:fragment="page-title">Clientes</h3>
+<h3 layout:fragment="form-title">Cadastro</h3>
+<div layout:fragment="content">
+	<button class="btn btn-sm btn-success" type="button" onclick="window.location.href='/cliente/novo'">Novo Cliente</button>
+	<hr></hr>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Sobrenome</th>
+				<th>CPF</th>
+				<th>Telefone</th>
+				<th>E- mail</th>
+				<th>Ações</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${clientes.empty}">
+				<td colspan="2">Sem Clientes Cadastrados</td>
+			</tr>
+			<tr th:each="cliente : ${clientes}">
+				<td><span th:text="${cliente.nome}"> </span></td>
+				<td><span th:text="${cliente.sobrenome}"> </span></td>
+				<td><span th:text="${cliente.CPF}"> </span></td>
+				<td><span th:text="${cliente.telefonePrincipal}"> </span></td>
+				<td><span th:text="${cliente.email}"> </span></td>
+				<td><button class="btn btn-sm btn-warning" type="button">Editar</button> </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-<head>
-	<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>.: Sistema CRM - Uniatenas :.</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	th:href="@{/plugins/fontawesome-free/css/all.min.css}"
-	href="plugins/fontawesome-free/css/all.min.css">
-<link rel="stylesheet"
-	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css}"
-	href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/icheck-bootstrap/icheck-bootstrap.min.css}"
-	href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-<link rel="stylesheet" th:href="@{/plugins/jqvmap/jqvmap.min.css}"
-	href="plugins/jqvmap/jqvmap.min.css">
-<link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}"
-	href="dist/css/adminlte.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}"
-	href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/daterangepicker/daterangepicker.css}"
-	href="plugins/daterangepicker/daterangepicker.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/summernote/summernote-bs4.css}"
-	href="plugins/summernote/summernote-bs4.css">
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-	rel="stylesheet">
-</head>
-<body>
-	<div layout:fragment="content">
-		<!--<th:block th:each="cliente : ${clientes}">
-		<span th:text="${cliente.nome}"/>
-	</th:block> -->
-		<table class=" table table-bordered">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Sobrenome</th>
-					<th>Estado Natal</th>
-					<th>naturalidade</th>
-					<th>Data de Nascimento</th>
-					<th>Sexo</th>
-					<th>E- mail</th>
-					<th>Nacionalidade</th>
-					<th>Grau De Instrucao</th>
-					<th>Telefone Principal</th>
-					<th>Telefone Complementar</th>
-					<th>CPF</th>
-					<th>Documento Complementar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:if="${clientes.empty}">
-					<td colspan="2">Sem Clientes Cadastrados</td>
-				</tr>
-				<tr th:each="cliente : ${clientes}">
-					<td><span th:text="${cliente.nome}">  </span></td>
-					<td><span th:text="${cliente.sobrenome}">  </span></td>
-					<td><span th:text="${cliente.estadoNatal}">  </span></td>
-					<td><span th:text="${cliente.naturalidade}">  </span></td>
-					<td><span th:text="${cliente.dtNascimento}">  </span></td>
-					<td><span th:text="${cliente.sexo}">  </span></td>
-					<td><span th:text="${cliente.email}">  </span></td>
-					<td><span th:text="${cliente.nacionalidade}">  </span></td>
-					<td><span th:text="${cliente.grauDeInstrucao}">  </span></td>
-					<td><span th:text="${cliente.telefonePrincipal}">  </span></td>
-					<td><span th:text="${cliente.telefoneComplementar}">  </span></td>
-					<td><span th:text="${cliente.CPF}">  </span></td>
-					<td><span th:text="${cliente.documentoComplementar}">  </span></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</body>
 </html>

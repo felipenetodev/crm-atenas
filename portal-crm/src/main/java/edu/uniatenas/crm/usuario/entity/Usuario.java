@@ -1,4 +1,4 @@
-package edu.uniatenas.crm.usuario;
+package edu.uniatenas.crm.usuario.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +11,15 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String login, senha;
+	private boolean atividade;
+	
+	
+	public boolean isAtividade() {
+		return atividade;
+	}
+	public void setAtividade(boolean atividade) {
+		this.atividade = atividade;
+	}
 	public Long getId() {
 		return id;
 	}

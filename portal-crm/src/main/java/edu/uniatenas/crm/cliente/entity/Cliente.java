@@ -21,7 +21,7 @@ import edu.uniatenas.crm.cliente.enums.Grau;
 import edu.uniatenas.crm.cliente.enums.Sexo;
 
 @Entity
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,6 @@ public class Cliente implements Serializable{
 	private String sobrenome;
 	@NotBlank
 	private String estadoNatal;
-	@NotBlank
 	private String naturalidade;
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	@Temporal(TemporalType.DATE)
@@ -56,98 +55,127 @@ public class Cliente implements Serializable{
 	@NotBlank
 	private String CPF;
 	private String documentoComplementar;
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getSobrenome() {
 		return sobrenome;
 	}
+
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+
 	public String getEstadoNatal() {
 		return estadoNatal;
 	}
+
 	public void setEstadoNatal(String estadoNatal) {
 		this.estadoNatal = estadoNatal;
 	}
+
 	public String getNaturalidade() {
 		return naturalidade;
 	}
+
 	public void setNaturalidade(String naturalidade) {
 		this.naturalidade = naturalidade;
 	}
+
 	public Date getDtNascimento() {
 		return dtNascimento;
 	}
+
 	public void setDtNascimento(Date dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
+
 	public Sexo getSexo() {
 		return sexo;
 	}
+
 	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
 	}
+
 	public EstadoCivil getEstadoCivil() {
 		return estadoCivil;
 	}
+
 	public void setEstadoCivil(EstadoCivil estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getNacionalidade() {
 		return nacionalidade;
 	}
+
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
+
 	public Grau getGrauDeInstrucao() {
 		return grauDeInstrucao;
 	}
+
 	public void setGrauDeInstrucao(Grau grauDeInstrucao) {
 		this.grauDeInstrucao = grauDeInstrucao;
 	}
+
 	public String getTelefonePrincipal() {
 		return telefonePrincipal;
 	}
+
 	public void setTelefonePrincipal(String telefonePrincipal) {
 		this.telefonePrincipal = telefonePrincipal;
 	}
+
 	public String getTelefoneComplementar() {
 		return telefoneComplementar;
 	}
+
 	public void setTelefoneComplementar(String telefoneComplementar) {
 		this.telefoneComplementar = telefoneComplementar;
 	}
+
 	public String getCPF() {
 		return CPF;
 	}
+
 	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
+
 	public String getDocumentoComplementar() {
 		return documentoComplementar;
 	}
+
 	public void setDocumentoComplementar(String documentoComplementar) {
 		this.documentoComplementar = documentoComplementar;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -169,6 +197,7 @@ public class Cliente implements Serializable{
 		result = prime * result + ((telefonePrincipal == null) ? 0 : telefonePrincipal.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -1,9 +1,10 @@
+
 $(document).ready(
 		function() {
 			$.getJSON('/dist/js/estados_cidades.json', function(data) {
 				var items = [];
 				var options = '<option value="">Selecione.</option>';
-				
+
 				$.each(data, function(key, val) {
 					options += '<option th:value="' + val.nome + '">'
 							+ val.nome + '</option>';
@@ -40,16 +41,16 @@ $(document).ready(
 $(document).ready(
 		function() {
 			$.getJSON('/dist/js/paises.json', function(data) {
-				
+
 				var items = [];
 				var options = '<option value="">Selecione.</option>';
-				
+
 				$.each(data, function(key, val) {
 					options += '<option th:value="' + val.nome + '">'
 							+ val.nome + '</option>';
-					
+
 				});
-				
+
 				$("#nacionalidade").html(options);
 			});
-})
+		})

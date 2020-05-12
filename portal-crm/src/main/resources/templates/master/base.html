@@ -4,7 +4,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="utf-8">
+<meta charset="iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>.: Sistema CRM - Uniatenas :.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,138 +79,53 @@
 							class="nav-link"> <i class="nav-icon fas fa-th"></i>
 								<p>Leads</p>
 						</a></li>
+					</ul>
 				</nav>
 			</div>
 
 		</aside>
 		<div class="content-wrapper">
-			<div class="content-header">
-				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Cadastro de Cliente</h1>
-						</div>
-						<div class="col-sm-6 mt-3">
-							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active">Menu Ativo</li>
-							</ol>
-						</div>
-						<div class="col-lg-8">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-12 m-t-12">
-										<form role="form" action = "/save" >
-											<div class="form-group">
-												<label for="Nome"> Nome: </label> <input
-													class="form-control" id="Nome" />
-											</div>
-											<div class="form-group">
-												<label for="Sobrenome"> Sobrenome: </label> <input
-													class="form-control" id="Sobrenome" />
-											</div>
-											<div class="form-group">
-												<label for="Email"> E-Mail: </label> <input
-													class="form-control" id="Email" />
-											</div>
-											<div class="row">
-												<div class="col-sm-2">
-													<div class="form-group">
-														<label for="EstadoNatal"> Estado Natal: </label> <select
-															class="form-control" id = "estados">
-															
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-10">
-													<div class="form-group">
-														<label for="CidadeNatal"> Cidade Natal: </label> <select
-															class="form-control" id = "cidades">
-															
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-12">
-													<div class="form-group">
-														<label for=""> Naturalidade: </label>
-														<select class="form-control" id = "naturalidade">
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="form-group">
-														<label for="EstadoNatal"> Sexo: </label> <select
-															class="form-control">
-															<option>Masculino</option>
-															<option>Feminino</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-10">
-													<div class="form-group">
-														<label for="CidadeNatal"> Estado Civil: </label> <select
-															class="form-control">
-															<option>Solteiro</option>
-															<option>Casado</option>													
-															<option>Divorciado</option>
-															<option>Viúvo</option>
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="form-group">
-														<label for="EstadoNatal"> Nacionalidade: </label> 
-														<select class="form-control" id = "nacionalidade">
-														</select>
-													</div>
-												</div>
-												<div class="col-sm-10">
-													<div class="form-group">
-														<label for="CidadeNatal"> Grau de Instrução: </label> <select
-															class="form-control">
-															<option>Ensino Médio Completo</option>
-															<option>Ensino Médio incompleto</option>
-															<option>Ensino Superior Completo</option>
-															<option>Ensino Superior incompleto</option>
-														</select>
-													</div>
-												</div>
 
-												<div class="col-sm-6">
-													<div class="form-group">
-														<label for="EstadoNatal"> Telefone: </label> <input
-															class="form-control" id="telefone" />
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="form-group">
-														<label for="CidadeNatal"> Telefone Complementar: </label>
-														<input class="form-control" id="Sobrenome" />
-													</div>
-												</div>
-											</div>
-											<button type="submit" class="btn btn-primary">Enviar</button>
-											<button type="reset" class="btn btn-danger">Cancelar</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="content-header">
+				<div class="card-header">
+					<h3 class="card-title" layout:fragment="page-title">Page Title</h3>
 				</div>
 			</div>
-			<section class="content"></section>
+
+			<section class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6"></div>
+					</div>
+					<div class="card card-primary">
+						<div class="card-header">
+							<h3 class="card-title" layout:fragment="form-title">Title</h3>
+						</div>
+						
+							<ul>
+								<li th:each="e : ${#fields.detailedErrors()}"
+									th:class="${e.global}? globalerr : fielderr"><span
+									th:text="${e.global}? '*' : ${e.fieldName}">The field
+										name</span> | <span th:text="${e.message}">The error message</span></li>
+							</ul>
+							<div class="card-body" layout:fragment="content"></div>
+						
+
+					</div>
+				</div>
+			</section>
 		</div>
-		<footer class="main-footer">
-			<strong>Copyright &copy; 2020 <a href="http://atenas.edu.br">Uniatenas</a>.
-			</strong> All rights reserved.
-			<div class="float-right d-none d-sm-inline-block">
-				<b>Version</b> 1.0.0
-			</div>
-		</footer>
+	</div>
+	<footer class="main-footer">
+		<strong>Copyright &copy; 2020 <a href="http://atenas.edu.br">Uniatenas</a>.
+		</strong> All rights reserved.
+		<div class="float-right d-none d-sm-inline-block">
+			<b>Version</b> 1.0.0
+		</div>
+	</footer>
 
 
-		<aside class="control-sidebar control-sidebar-dark"></aside>
+	<aside class="control-sidebar control-sidebar-dark"></aside>
 
 	</div>
 
@@ -252,6 +167,7 @@
 	<script th:src="@{/dist/js/pages/dashboard.js}"
 		src="dist/js/pages/dashboard.js"></script>
 	<script th:src="@{/dist/js/demo.js}" src="dist/js/demo.js"></script>
-	<script th:src="@{/dist/js/cad-cliente.js}" src="dist/js/cad-cliente.js" charset="utf-8"></script>
+	<script th:src="@{/dist/js/cad-cliente.js}"
+		src="dist/js/cad-cliente.js" charset="utf-8"></script>
 </body>
 </html>

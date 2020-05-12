@@ -1,7 +1,10 @@
 package edu.uniatenas.crm.cliente.enums;
 
 public enum Estado {
-	LEAD("Lead"),VESTIBULAR("Vestibular"),PRE_MATRICULA("Pre-Matrícula"),MATRICULADO("Matriculado");
+	LEAD("Lead"),
+	VESTIBULAR("Vestibular"),
+	PRE_MATRICULA("Pre-Matrícula"),
+	MATRICULADO("Matriculado");
 	private String name;
 
 	private Estado(String name) {
