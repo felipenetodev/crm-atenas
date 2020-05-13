@@ -28,5 +28,14 @@ public class ClienteService {
 		repository.delete(cliente);
 	}
 
+	
+	public void updateCliente(Cliente cliente) {
+		repository.save(cliente);
+	}
+	
+	public Cliente getCliente(Long id) {
+		Cliente cliente = repository.getOne(id);
+		return cliente;
+	}
 }
 

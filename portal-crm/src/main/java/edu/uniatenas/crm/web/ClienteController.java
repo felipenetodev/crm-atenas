@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.uniatenas.crm.cliente.entity.Cliente;
@@ -42,5 +46,20 @@ public class ClienteController {
 			System.out.println(results.getAllErrors());
 			return create();
 		}
+	}
+
+	@RequestMapping("/delete/{id}")
+	public ModelAndView delete(@PathVariable long id) {
+		System.out.println(id);
+		service.deleteCliente(id);
+		return list();
+	}
+	
+	@RequestMapping("/update/{id}")
+	public ModelAndView update(@PathVariable("id") Long id) {
+		ModelAndView view = new ModelAndView("cliente-update");
+		Cliente cliente = service.getCliente(id);
+		view.addObject("cliente", cliente);
+		return view;
 	}
 }

@@ -1,4 +1,3 @@
-
 $(document).ready(
 		function() {
 			$.getJSON('/dist/js/estados_cidades.json', function(data) {
@@ -52,5 +51,11 @@ $(document).ready(
 				});
 
 				$("#nacionalidade").html(options);
+			});
+			
+			
+			$('#btn-excluir-cliente').click(function(){
+				var id = this.getAttribute('data-idCliente')
+				 alert(id)
 			});
 		})

@@ -5,7 +5,8 @@
 <h3 layout:fragment="page-title">Clientes</h3>
 <h3 layout:fragment="form-title">Cadastro</h3>
 <div layout:fragment="content">
-	<button class="btn btn-sm btn-success" type="button" onclick="window.location.href='/cliente/novo'">Novo Cliente</button>
+	<button class="btn btn-sm btn-success" type="button"
+		onclick="window.location.href='/cliente/novo'">Novo Cliente</button>
 	<hr></hr>
 	<table class="table table-bordered">
 		<thead>
@@ -16,8 +17,6 @@
 				<th>Telefone</th>
 				<th>E- mail</th>
 				<th>Ações</th>
-				
-				
 			</tr>
 		</thead>
 		<tbody>
@@ -30,10 +29,36 @@
 				<td><span th:text="${cliente.CPF}"> </span></td>
 				<td><span th:text="${cliente.telefonePrincipal}"> </span></td>
 				<td><span th:text="${cliente.email}"> </span></td>
-				<td><button class="btn btn-sm btn-warning" type="button">Editar</button> </td>
+				<td><button class="btn btn-sm btn-warning" type="button">Editar</button>
+					<button class="btn btn-sm btn-danger" type="button"
+						th:attr="onclick = ${'modalRemover(' + cliente.id + ')'}">Excluir</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
+<div class="modal fade" id = "deleteModal" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Fechar">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+			</div>
+
+			<div class="modal-body">
+				Deseja realmente excluir este item? 
+				<inputid="modal-deletar-cliente-id" type = "hidden" name = "id"/>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="deleteCliente">Sim</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+			</div>
+		</div>
+	</div>
+</div>
 </html>

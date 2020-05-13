@@ -55,6 +55,7 @@ public class Cliente implements Serializable {
 	@NotBlank
 	private String CPF;
 	private String documentoComplementar;
+	private Boolean isAtivo = true;
 
 	public Long getId() {
 		return id;
@@ -274,5 +275,13 @@ public class Cliente implements Serializable {
 		} else if (!telefonePrincipal.equals(other.telefonePrincipal))
 			return false;
 		return true;
+	}
+
+	public Boolean getIsAtivo() {
+		return isAtivo;
+	}
+
+	public void setIsAtivo(Boolean isAtivo) {
+		this.isAtivo = isAtivo;
 	}
 }
