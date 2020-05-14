@@ -37,14 +37,14 @@ public class ClienteController {
 	}
 
 	@PostMapping("/save")
-	public ModelAndView save(@Valid Cliente cliente, BindingResult results) {
+	public String save(@Valid Cliente cliente, BindingResult results) {
 		if (!results.hasErrors()) {
 			service.saveCliete(cliente);
 			cliente = null;
-			return list();
+			return "redirect:/cliente/";
 		} else {
 			System.out.println(results.getAllErrors());
-			return create();
+			return "redirect:/novo";
 		}
 	}
 
