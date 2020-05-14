@@ -25,7 +25,8 @@ public class ClienteService {
 
 	public void deleteCliente(Long id) {
 		Cliente cliente = repository.getOne(id);
-		repository.delete(cliente);
+		cliente.setIsAtivo(false);
+		repository.save(cliente);
 	}
 
 	

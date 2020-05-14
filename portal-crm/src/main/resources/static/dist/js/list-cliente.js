@@ -1,22 +1,32 @@
 function modalRemover(id){
-	  $("#modal-deletar-cliente-id").val(id);
-	  $("#deleteModal").modal(options);	
-	  //alert('oi')
-};
+	$.confirm({
+	    title: 'Confirmar a Exclusão ?',
+	    content: 'Tem certeza que quer excluir o registro ?',
+	    buttons: {
+	        confirmar: function () {
+	        	 $.ajax({
+	                 url: '/cliente/delete',
+	                 data: id,
+	                 type: 'POST',
 
-/*$(document.this).ready(function () {
-	$('#deleteCliente').on("click", function(e){
-	      e.preventDefault();						
-	    
-	      var Id = parseInt($("#modal-deletar-cliente-id").val());
-									
-	      $.ajax({
-	          type:"GET",
-	          url:"/deleteClient",
-	          data:{id:Id},
-                  success:function (data) {
-	            	   $("#clientes"+id).closest("td#"+data).parent("tr").remove();
-		          }
-            });				        	
-	 });
-});*/
+	                 processData: false,
+	                 cache: false,
+	                 contentType: "application/json; charset=utf-8",
+
+	                 success: function (data) {
+	                     console.log(data)
+	                     window.location.reload();
+	                 },
+	                 
+	                 error: function (xhr, status, error) {
+	                	 var err = eval("(" + xhr.responseText + ")");
+	                	 console.log(err.Message);
+	                 }
+	             });
+	        },
+	        cancelar: function () {
+	            $.alert('Cancelado!');
+	        },
+	    }
+	});  
+}

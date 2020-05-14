@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,6 +42,7 @@ public class ClienteController {
 	public ModelAndView save(@Valid Cliente cliente, BindingResult results) {
 		if (!results.hasErrors()) {
 			service.saveCliete(cliente);
+			cliente = null;
 			return list();
 		} else {
 			System.out.println(results.getAllErrors());
@@ -48,11 +50,17 @@ public class ClienteController {
 		}
 	}
 
-	@RequestMapping("/delete/{id}")
-	public ModelAndView delete(@PathVariable long id) {
-		System.out.println(id);
-		service.deleteCliente(id);
-		return list();
+	@PostMapping("/delete")
+	@ResponseBody
+	public String delete(@RequestBody Long id, BindingResult results) {
+		if (!results.hasErrors()) {
+			service.deleteCliente(id);
+			System.out.println(id);
+			return "Registro Excluido.";
+		} else {
+			System.out.println(results.getAllErrors());
+			return "Erro";
+		}
 	}
 	
 	@RequestMapping("/update/{id}")
