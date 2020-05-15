@@ -9,7 +9,7 @@ $(document).ready(
 							+ val.nome + '</option>';
 				});
 
-				$("#estados").html(options);
+				$("#estados").append(options);
 
 				$("#estados").change(
 						function() {
@@ -31,8 +31,8 @@ $(document).ready(
 								}
 							});
 
-							$("#cidades").html(options_cidades);
-							$("#naturalidade").html(options_cidades);
+							$("#cidades").append(options_cidades);
+							$("#naturalidade").append(options_cidades);
 						}).change();
 			});
 		});
@@ -50,7 +50,7 @@ $(document).ready(
 
 				});
 
-				$("#nacionalidade").html(options);
+				$("#nacionalidade").append(options);
 			});
 			
 			
