@@ -30,3 +30,7 @@ function modalRemover(id){
 	    }
 	});  
 }
+
+function editarCliente(id){
+	window.location.href = "/cliente/update/"+id;
+}

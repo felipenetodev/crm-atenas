@@ -7,10 +7,8 @@
 <h3 layout:fragment="form-title">Atualização</h3>
 <div layout:fragment="content">
 	
-	<form th:action="@{save}" method="POST" th:object="${cliente}"
-		id='formCliente'>
+	<form th:action="@{/cliente/update/save}" method="POST" th:object="${cliente}" id='formCliente'>
 		<div class="form-group">
-
 			<label for="Nome"> Nome: </label> 
 			<input class="form-control"	id="Nome" th:field="*{nome}"/>
 		</div>
@@ -115,8 +113,7 @@
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Enviar</button>
-			<button type="reset" onclick="window.location.href='/cliente/'"
-				class="btn btn-danger">Cancelar</button>
+			<button type="reset" onclick="window.location.href='/cliente/'" class="btn btn-danger">Cancelar</button>
 		</div>
 	</form>
 </div>

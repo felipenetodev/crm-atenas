@@ -29,7 +29,7 @@
 				<td><span th:text="${cliente.CPF}"> </span></td>
 				<td><span th:text="${cliente.telefonePrincipal}"> </span></td>
 				<td><span th:text="${cliente.email}"> </span></td>
-				<td><button class="btn btn-sm btn-warning" type="button">Editar</button>
+				<td><button class="btn btn-sm btn-warning" type="button" th:attr="onclick = ${'editarCliente(' + cliente.id + ')'}">Editar</button>
 				<button class="btn btn-sm btn-danger" type="button" th:attr="onclick = ${'modalRemover(' + cliente.id + ')'}">Excluir</button>
 				</td>
 			</tr>

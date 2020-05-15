@@ -66,4 +66,17 @@ public class ClienteController {
 		view.addObject("cliente", cliente);
 		return view;
 	}
+	
+	
+	@RequestMapping("/update/save")
+	public ModelAndView attCliente(@Valid Cliente cliente, BindingResult results) {
+		System.out.println(cliente.getId());
+		if (!results.hasErrors()) {
+			service.saveCliete(cliente);
+			return list();
+		} else {
+			System.out.println(results.getAllErrors());
+			return list();
+		}
+	}
 }
