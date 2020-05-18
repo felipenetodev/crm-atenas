@@ -11,11 +11,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import br.com.safeguard.constraint.annotations.Verify;
+import br.com.safeguard.types.ParametroTipo;
 import edu.uniatenas.crm.cliente.enums.EstadoCivil;
 import edu.uniatenas.crm.cliente.enums.Grau;
 import edu.uniatenas.crm.cliente.enums.Sexo;
@@ -52,9 +55,12 @@ public class Cliente implements Serializable {
 	@NotBlank
 	private String telefonePrincipal;
 	private String telefoneComplementar;
+	@Valid
 	@NotBlank
+	@Verify(ParametroTipo.CPF)
 	private String CPF;
 	private String documentoComplementar;
+	
 	private Boolean isAtivo = true;
 
 	public Long getId() {
