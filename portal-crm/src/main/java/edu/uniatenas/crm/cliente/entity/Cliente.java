@@ -55,9 +55,7 @@ public class Cliente implements Serializable {
 	@NotBlank
 	private String telefonePrincipal;
 	private String telefoneComplementar;
-	@Valid
 	@NotBlank
-	@Verify(ParametroTipo.CPF)
 	private String CPF;
 	private String documentoComplementar;
 	
