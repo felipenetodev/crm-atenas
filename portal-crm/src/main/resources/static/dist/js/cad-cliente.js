@@ -59,3 +59,9 @@ $(document).ready(
 				 alert(id)
 			});
 		})
+		
+  $(document).ready(function () { 
+	  $("#CPF").mask('000.000.000-00', {reverse: true});
+	  $("#telefone").mask("(00) 0000-00009")
+	  $("#telefoneComplementar").mask("(00) 0000-00009")
+   });

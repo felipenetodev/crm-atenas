@@ -31,15 +31,13 @@
 			</div>
 			<div class="col-sm-3">
 				<div class="form-group">
-					<label for="dataNascimento"> Data de Nascimento: </label> <input
-						class="form-control" id="dataNascimento"
-						th:field="*{dtNascimento}" type='date' />
+					<label for="dataNascimento"> Data de Nascimento: </label> 
+					<input class = "form-control" id = "dataNascimento" th:field = "*{dtNascimento}" th:value="${dtNascimento}" type = 'date'/>
 				</div>
 			</div>
 			<div class="col-sm-7">
 				<div class="form-group">
-					<label for="Cpf"> CPF: </label> <input class="form-control"
-						id="CPF" th:field="*{CPF}" />
+					<label for="Cpf"> CPF: </label> <input class = "form-control" id = "CPF" th:field = "*{CPF}" />
 				</div>
 			</div>
 			<div class="col-sm-12">

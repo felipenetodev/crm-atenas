@@ -35,7 +35,7 @@ public class Cliente implements Serializable {
 	@NotBlank
 	private String estadoNatal;
 	private String naturalidade;
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date dtNascimento;
 	@Enumerated(EnumType.STRING)
