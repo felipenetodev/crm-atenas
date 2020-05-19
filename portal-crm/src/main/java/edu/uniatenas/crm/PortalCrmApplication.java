@@ -8,5 +8,4 @@ public class PortalCrmApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PortalCrmApplication.class, args);
 	}
-
 }
