@@ -14,10 +14,4 @@ public class HomeController {
 		ModelAndView view = new ModelAndView("index");
 		return view;
 	}
-	
-	@GetMapping("/landing")
-	public ModelAndView list() {
-		ModelAndView view = new ModelAndView("landing-page");
-		return view;
-	}
 }

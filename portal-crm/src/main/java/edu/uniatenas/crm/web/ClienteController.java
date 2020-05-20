@@ -41,6 +41,7 @@ public class ClienteController {
 	public String save(@Valid Cliente cliente, BindingResult results) {
 		if (!results.hasErrors()) {
 			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
+				System.out.println(cliente.getTelefonePrincipal());
 				service.saveCliete(cliente);
 				return "redirect:/cliente/";
 			}else {
@@ -50,6 +51,27 @@ public class ClienteController {
 			System.out.println(results.getAllErrors());
 			return "redirect:/novo";
 		}
+	}
+	
+	@PostMapping("/saveLead")
+	public String saveLead(@Valid Cliente cliente, BindingResult results) {
+		if (!results.hasErrors()) {
+			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
+				service.saveCliete(cliente);
+				return "redirect:/lead/confirmacao/";
+			}else {
+				return "redirect:/lead/confirmacao/";
+			}
+		}else {
+			System.out.println(results.getAllErrors());
+			return "redirect:/novo";
+		}
+	}
+	
+	@RequestMapping("/lead/confirmacao")
+	public ModelAndView leadConfirmacao() {
+		ModelAndView view = new ModelAndView("landing-page-confirmacao");
+		return view;
 	}
 
 	@PostMapping("/delete")
@@ -87,6 +109,13 @@ public class ClienteController {
 			System.out.println(results.getAllErrors());
 			return "redirect:/novo";
 		}
+	}
+	
+	@GetMapping("/landing")
+	public ModelAndView cadLead() {
+		ModelAndView view = new ModelAndView("landing-page");
+		view.addObject("cliente", new Cliente());
+		return view;
 	}
 	
 	public static boolean isCPF(String CPF) {

@@ -35,7 +35,6 @@ public class Cliente implements Serializable {
 	private String nome;
 	@NotBlank
 	private String sobrenome;
-	@NotBlank
 	private String estadoNatal;
 	private String naturalidade;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -48,7 +47,6 @@ public class Cliente implements Serializable {
 	@NotBlank
 	@Email
 	private String email;
-	@NotBlank
 	private String nacionalidade;
 	@Enumerated(EnumType.STRING)
 	private Grau grauDeInstrucao;
