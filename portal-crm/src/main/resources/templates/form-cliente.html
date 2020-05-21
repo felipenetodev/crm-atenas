@@ -103,8 +103,9 @@
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Enviar</button>
-			<button type="reset" onclick="window.location.href='/cliente/'"
-				class="btn btn-danger">Cancelar</button>
+			<button type="reset" onclick="window.location.href='/cliente/'" class="btn btn-danger">Cancelar</button>
+			<br>
+			<span th:if="${mensagem != null}" th:text="${mensagem}"></span>
 		</div>
 	</form>
 </div>

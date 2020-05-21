@@ -3,6 +3,7 @@ package edu.uniatenas.crm.cliente.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -54,6 +55,7 @@ public class Cliente implements Serializable {
 	private String telefonePrincipal;
 	private String telefoneComplementar;
 	@NotBlank
+	@Column(unique = true)
 	private String CPF;
 	private String documentoComplementar;
 	

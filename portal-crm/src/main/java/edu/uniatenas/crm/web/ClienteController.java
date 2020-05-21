@@ -38,40 +38,69 @@ public class ClienteController {
 	}
 
 	@PostMapping("/save")
-	public String save(@Valid Cliente cliente, BindingResult results) {
+	public ModelAndView save(@Valid Cliente cliente, BindingResult results) {
+		String mensagem = "";
 		if (!results.hasErrors()) {
 			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
-				System.out.println(cliente.getTelefonePrincipal());
-				service.saveCliete(cliente);
-				return "redirect:/cliente/";
+				if(service.getClienteByCPF(cliente.getCPF())) {
+					mensagem = "CPF Já Cadastrado";
+					System.out.println(results.getAllErrors());
+					ModelAndView view = new ModelAndView("form-cliente");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}else {
+					service.saveCliete(cliente);
+					mensagem = "Cadastrado com Sucesso!";
+					ModelAndView view = new ModelAndView("form-cliente");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}
 			}else {
-				return "redirect:/cliente/";
+				mensagem = "CPF Inválido";
+				ModelAndView view = new ModelAndView("form-cliente");
+				view.addObject("mensagem", mensagem);
+				return view;
 			}
 		}else {
 			System.out.println(results.getAllErrors());
-			return "redirect:/novo";
+			mensagem = "Erro";
+			ModelAndView view = new ModelAndView("form-cliente");
+			view.addObject("mensagem", mensagem);
+			return view;
 		}
 	}
 	
 	@PostMapping("/saveLead")
-	public String saveLead(@Valid Cliente cliente, BindingResult results) {
+	public ModelAndView saveLead(@Valid Cliente cliente, BindingResult results) {
+		String mensagem = "";
 		if (!results.hasErrors()) {
 			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
-				service.saveCliete(cliente);
-				return "redirect:/lead/confirmacao/";
+				if(service.getClienteByCPF(cliente.getCPF())) {
+					mensagem = "CPF Já Cadastrado";
+					System.out.println(results.getAllErrors());
+					ModelAndView view = new ModelAndView("landing-page");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}else {
+					service.saveCliete(cliente);
+					mensagem = "Cadastrado com Sucesso!";
+					ModelAndView view = new ModelAndView("landing-page");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}
 			}else {
-				return "redirect:/lead/confirmacao/";
+				mensagem = "CPF inválido";
+				ModelAndView view = new ModelAndView("landing-page");
+				view.addObject("mensagem", mensagem);
+				return view;
 			}
 		}else {
-			System.out.println(results.getAllErrors());
-			return "redirect:/novo";
+			mensagem = "Erro";
+			ModelAndView view = new ModelAndView("landing-page");
+			view.addObject("mensagem", mensagem);
+			return view;
 		}
-	}
-	
-	@RequestMapping("/lead/confirmacao")
-	public ModelAndView leadConfirmacao() {
-		ModelAndView view = new ModelAndView("landing-page-confirmacao");
-		return view;
+			
 	}
 
 	@PostMapping("/delete")
@@ -95,19 +124,34 @@ public class ClienteController {
 	
 	
 	@RequestMapping("/update/save")
-	public String attCliente(@Valid Cliente cliente, BindingResult results) {
+	public ModelAndView attCliente(@Valid Cliente cliente, BindingResult results) {
+		String mensagem = "";
 		if (!results.hasErrors()) {
 			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
-				System.out.println("Funcionando");
-				service.saveCliete(cliente);
-				return "redirect:/cliente/";
+				if(service.getClienteByCPF(cliente.getCPF())) {
+					mensagem = "CPF Já Cadastrado";
+					System.out.println(results.getAllErrors());
+					ModelAndView view = new ModelAndView("form-cliente");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}else {
+					service.saveCliete(cliente);
+					mensagem = "Cadastrado com Sucesso!";
+					ModelAndView view = new ModelAndView("form-cliente");
+					view.addObject("mensagem", mensagem);
+					return view;
+				}
 			}else {
-				System.out.println("Não Funcionando");
-				return "redirect:/cliente/";
+				mensagem = "CPF inválido";
+				ModelAndView view = new ModelAndView("cliente-update");
+				view.addObject("mensagem", mensagem);
+				return view;
 			}
 		}else {
-			System.out.println(results.getAllErrors());
-			return "redirect:/novo";
+			mensagem = "Erro";
+			ModelAndView view = new ModelAndView("cliente-update");
+			view.addObject("mensagem", mensagem);
+			return view;
 		}
 	}
 	

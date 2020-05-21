@@ -9,4 +9,5 @@ import edu.uniatenas.crm.usuario.entity.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	public Usuario findByLoginAndSenha(String login,String senha);
+	
 }

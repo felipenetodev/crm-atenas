@@ -38,5 +38,14 @@ public class ClienteService {
 		Cliente cliente = repository.getOne(id);
 		return cliente;
 	}
+	
+	public Boolean getClienteByCPF(String cpf) {
+		Cliente cliente = repository.findByCPF(cpf);
+		if(cliente == null) {
+			return false;
+		}else {
+			return true;
+		}
+	}
 }
 
