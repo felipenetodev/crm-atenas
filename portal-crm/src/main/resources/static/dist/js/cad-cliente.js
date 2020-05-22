@@ -45,11 +45,9 @@ $(document).ready(
 				var options = '<option value="">Selecione.</option>';
 
 				$.each(data, function(key, val) {
-					options += '<option th:value="' + val.nome + '">'
-							+ val.nome + '</option>';
-
+					options += '<option th:value="' + val.nome + '">' + val.nome + '</option>';
 				});
-
+	
 				$("#nacionalidade").append(options);
 			});
 			

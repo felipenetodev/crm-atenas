@@ -1,21 +1,21 @@
   [
     {
         "ordem": 1,
-        "nome": "Afeganist„o",
+        "nome": "Afeganist√£o",
         "sigla2": "AF",
         "sigla3": "AFG",
         "codigo": "004"
     },
     {
         "ordem": 2,
-        "nome": "¡frica do Sul",
+        "nome": "√Åfrica do Sul",
         "sigla2": "ZA",
         "sigla3": "ZAF",
         "codigo": "710"
     },
     {
         "ordem": 3,
-        "nome": "Alb‚nia",
+        "nome": "Alb√¢nia",
         "sigla2": "AL",
         "sigla3": "ALB",
         "codigo": "008"
@@ -50,14 +50,14 @@
     },
     {
         "ordem": 8,
-        "nome": "Ant·rtida",
+        "nome": "Ant√°rtida",
         "sigla2": "AQ",
         "sigla3": "ATA",
         "codigo": "010"
     },
     {
         "ordem": 9,
-        "nome": "AntÌgua e Barbuda",
+        "nome": "Ant√≠gua e Barbuda",
         "sigla2": "AG",
         "sigla3": "ATG",
         "codigo": "028"
@@ -71,14 +71,14 @@
     },
     {
         "ordem": 11,
-        "nome": "Ar·bia Saudita",
+        "nome": "Ar√°bia Saudita",
         "sigla2": "SA",
         "sigla3": "SAU",
         "codigo": "682"
     },
     {
         "ordem": 12,
-        "nome": "ArgÈlia",
+        "nome": "Arg√©lia",
         "sigla2": "DZ",
         "sigla3": "DZA",
         "codigo": "012"
@@ -92,7 +92,7 @@
     },
     {
         "ordem": 14,
-        "nome": "ArmÍnia",
+        "nome": "Arm√™nia",
         "sigla2": "AM",
         "sigla3": "ARM",
         "codigo": "51"
@@ -106,21 +106,21 @@
     },
     {
         "ordem": 16,
-        "nome": "Austr·lia",
+        "nome": "Austr√°lia",
         "sigla2": "AU",
         "sigla3": "AUS",
         "codigo": "036"
     },
     {
         "ordem": 17,
-        "nome": "¡ustria",
+        "nome": "√Åustria",
         "sigla2": "AT",
         "sigla3": "AUT",
         "codigo": "040"
     },
     {
         "ordem": 18,
-        "nome": "Azerbaij„o",
+        "nome": "Azerbaij√£o",
         "sigla2": "AZ  ",
         "sigla3": "AZE",
         "codigo": "31"
@@ -162,7 +162,7 @@
     },
     {
         "ordem": 24,
-        "nome": "BÈlgica",
+        "nome": "B√©lgica",
         "sigla2": "BE",
         "sigla3": "BEL",
         "codigo": "056"
@@ -190,14 +190,14 @@
     },
     {
         "ordem": 28,
-        "nome": "BolÌvia",
+        "nome": "Bol√≠via",
         "sigla2": "BO",
         "sigla3": "BOL",
         "codigo": "068"
     },
     {
         "ordem": 29,
-        "nome": "BÛsnia-HerzegÛvina",
+        "nome": "B√≥snia-Herzeg√≥vina",
         "sigla2": "BA",
         "sigla3": "BIH",
         "codigo": "070"
@@ -225,7 +225,7 @@
     },
     {
         "ordem": 33,
-        "nome": "Bulg·ria",
+        "nome": "Bulg√°ria",
         "sigla2": "BG",
         "sigla3": "BGR",
         "codigo": "100"
@@ -246,7 +246,7 @@
     },
     {
         "ordem": 36,
-        "nome": "But„o",
+        "nome": "But√£o",
         "sigla2": "BT",
         "sigla3": "BTN",
         "codigo": "064"
@@ -260,7 +260,7 @@
     },
     {
         "ordem": 38,
-        "nome": "Camarıes",
+        "nome": "Camar√µes",
         "sigla2": "CM",
         "sigla3": "CMR",
         "codigo": "120"
@@ -274,14 +274,14 @@
     },
     {
         "ordem": 40,
-        "nome": "Canad·",
+        "nome": "Canad√°",
         "sigla2": "CA",
         "sigla3": "CAN",
         "codigo": "124"
     },
     {
         "ordem": 41,
-        "nome": "Cazaquist„o",
+        "nome": "Cazaquist√£o",
         "sigla2": "KZ",
         "sigla3": "KAZ",
         "codigo": "398"
@@ -323,7 +323,7 @@
     },
     {
         "ordem": 47,
-        "nome": "ColÙmbia",
+        "nome": "Col√¥mbia",
         "sigla2": "CO",
         "sigla3": "COL",
         "codigo": "170"
@@ -337,14 +337,14 @@
     },
     {
         "ordem": 49,
-        "nome": "CorÈia do Norte",
+        "nome": "Cor√©ia do Norte",
         "sigla2": "KP",
         "sigla3": "PRK",
         "codigo": "408"
     },
     {
         "ordem": 50,
-        "nome": "CorÈia do Sul",
+        "nome": "Cor√©ia do Sul",
         "sigla2": "KR",
         "sigla3": "KOR",
         "codigo": "410"
@@ -365,7 +365,7 @@
     },
     {
         "ordem": 53,
-        "nome": "Cro·cia (Hrvatska)",
+        "nome": "Cro√°cia (Hrvatska)",
         "sigla2": "HR",
         "sigla3": "HRV",
         "codigo": "191"
@@ -414,7 +414,7 @@
     },
     {
         "ordem": 60,
-        "nome": "Emirados ¡rabes Unidos",
+        "nome": "Emirados √Årabes Unidos",
         "sigla2": "AE",
         "sigla3": "ARE",
         "codigo": "784"
@@ -428,21 +428,21 @@
     },
     {
         "ordem": 62,
-        "nome": "EritrÈia",
+        "nome": "Eritr√©ia",
         "sigla2": "ER",
         "sigla3": "ERI",
         "codigo": "232"
     },
     {
         "ordem": 63,
-        "nome": "Eslov·quia",
+        "nome": "Eslov√°quia",
         "sigla2": "SK",
         "sigla3": "SVK",
         "codigo": "703"
     },
     {
         "ordem": 64,
-        "nome": "EslovÍnia",
+        "nome": "Eslov√™nia",
         "sigla2": "SI",
         "sigla3": "SVN",
         "codigo": "705"
@@ -463,14 +463,14 @@
     },
     {
         "ordem": 67,
-        "nome": "EstÙnia",
+        "nome": "Est√¥nia",
         "sigla2": "EE",
         "sigla3": "EST",
         "codigo": "233"
     },
     {
         "ordem": 68,
-        "nome": "EtiÛpia",
+        "nome": "Eti√≥pia",
         "sigla2": "ET",
         "sigla3": "ETH",
         "codigo": "231"
@@ -491,28 +491,28 @@
     },
     {
         "ordem": 71,
-        "nome": "Finl‚ndia",
+        "nome": "Finl√¢ndia",
         "sigla2": "FI",
         "sigla3": "FIN",
         "codigo": "246"
     },
     {
         "ordem": 72,
-        "nome": "FranÁa",
+        "nome": "Fran√ßa",
         "sigla2": "FR",
         "sigla3": "FRA",
         "codigo": "250"
     },
     {
         "ordem": 73,
-        "nome": "Gab„o",
+        "nome": "Gab√£o",
         "sigla2": "GA",
         "sigla3": "GAB",
         "codigo": "266"
     },
     {
         "ordem": 74,
-        "nome": "G‚mbia",
+        "nome": "G√¢mbia",
         "sigla2": "GM",
         "sigla3": "GMB",
         "codigo": "270"
@@ -526,7 +526,7 @@
     },
     {
         "ordem": 76,
-        "nome": "GeÛrgia",
+        "nome": "Ge√≥rgia",
         "sigla2": "GE",
         "sigla3": "GEO",
         "codigo": "268"
@@ -540,7 +540,7 @@
     },
     {
         "ordem": 78,
-        "nome": "Gr„-Bretanha (Reino Unido, UK)",
+        "nome": "Gr√£-Bretanha (Reino Unido, UK)",
         "sigla2": "GB",
         "sigla3": "GBR",
         "codigo": "826"
@@ -554,14 +554,14 @@
     },
     {
         "ordem": 80,
-        "nome": "GrÈcia",
+        "nome": "Gr√©cia",
         "sigla2": "GR",
         "sigla3": "GRC",
         "codigo": "300"
     },
     {
         "ordem": 81,
-        "nome": "Groel‚ndia",
+        "nome": "Groel√¢ndia",
         "sigla2": "GL",
         "sigla3": "GRL",
         "codigo": "304"
@@ -575,7 +575,7 @@
     },
     {
         "ordem": 83,
-        "nome": "Guam (TerritÛrio dos Estados Unidos)",
+        "nome": "Guam (Territ√≥rio dos Estados Unidos)",
         "sigla2": "GU",
         "sigla3": "GUM",
         "codigo": "316"
@@ -610,21 +610,21 @@
     },
     {
         "ordem": 88,
-        "nome": "GuinÈ",
+        "nome": "Guin√©",
         "sigla2": "GN",
         "sigla3": "GIN",
         "codigo": "324"
     },
     {
         "ordem": 89,
-        "nome": "GuinÈ Equatorial",
+        "nome": "Guin√© Equatorial",
         "sigla2": "GQ",
         "sigla3": "GNQ",
         "codigo": "226"
     },
     {
         "ordem": 90,
-        "nome": "GuinÈ-Bissau",
+        "nome": "Guin√©-Bissau",
         "sigla2": "GW",
         "sigla3": "GNB",
         "codigo": "624"
@@ -666,14 +666,14 @@
     },
     {
         "ordem": 96,
-        "nome": "IÍmen",
+        "nome": "I√™men",
         "sigla2": "YE",
         "sigla3": "YEM",
         "codigo": "887"
     },
     {
         "ordem": 97,
-        "nome": "Ilha Bouvet (TerritÛrio da Noruega)",
+        "nome": "Ilha Bouvet (Territ√≥rio da Noruega)",
         "sigla2": "BV",
         "sigla3": "BVT",
         "codigo": "074"
@@ -701,7 +701,7 @@
     },
     {
         "ordem": 101,
-        "nome": "Ilha Reuni„o",
+        "nome": "Ilha Reuni√£o",
         "sigla2": "RE",
         "sigla3": "REU",
         "codigo": "638"
@@ -757,14 +757,14 @@
     },
     {
         "ordem": 109,
-        "nome": "Ilhas GeÛrgia do Sul e Sandwich do Sul",
+        "nome": "Ilhas Ge√≥rgia do Sul e Sandwich do Sul",
         "sigla2": "GS",
         "sigla3": "SGS",
         "codigo": "239"
     },
     {
         "ordem": 110,
-        "nome": "Ilhas Heard e McDonald (TerritÛrio da Austr·lia)",
+        "nome": "Ilhas Heard e McDonald (Territ√≥rio da Austr√°lia)",
         "sigla2": "HM",
         "sigla3": "HMD",
         "codigo": "334"
@@ -806,7 +806,7 @@
     },
     {
         "ordem": 116,
-        "nome": "Ilhas Solom„o",
+        "nome": "Ilhas Solom√£o",
         "sigla2": "SB",
         "sigla3": "SLB",
         "codigo": "090"
@@ -855,21 +855,21 @@
     },
     {
         "ordem": 123,
-        "nome": "Ìndia",
+        "nome": "√≠ndia",
         "sigla2": "IN",
         "sigla3": "IND",
         "codigo": "356"
     },
     {
         "ordem": 124,
-        "nome": "IndonÈsia",
+        "nome": "Indon√©sia",
         "sigla2": "ID",
         "sigla3": "IDN",
         "codigo": "360"
     },
     {
         "ordem": 125,
-        "nome": "Ir„",
+        "nome": "Ir√£",
         "sigla2": "IR",
         "sigla3": "IRN",
         "codigo": "364"
@@ -890,7 +890,7 @@
     },
     {
         "ordem": 128,
-        "nome": "Isl‚ndia",
+        "nome": "Isl√¢ndia",
         "sigla2": "IS",
         "sigla3": "ISL",
         "codigo": "352"
@@ -904,7 +904,7 @@
     },
     {
         "ordem": 130,
-        "nome": "It·lia",
+        "nome": "It√°lia",
         "sigla2": "IT",
         "sigla3": "ITA",
         "codigo": "380"
@@ -918,7 +918,7 @@
     },
     {
         "ordem": 132,
-        "nome": "Jap„o",
+        "nome": "Jap√£o",
         "sigla2": "JP",
         "sigla3": "JPN",
         "codigo": "392"
@@ -932,14 +932,14 @@
     },
     {
         "ordem": 134,
-        "nome": "Jord‚nia",
+        "nome": "Jord√¢nia",
         "sigla2": "JO",
         "sigla3": "JOR",
         "codigo": "400"
     },
     {
         "ordem": 135,
-        "nome": "KÍnia",
+        "nome": "K√™nia",
         "sigla2": "KE",
         "sigla3": "KEN",
         "codigo": "404"
@@ -967,7 +967,7 @@
     },
     {
         "ordem": 139,
-        "nome": "L·tvia",
+        "nome": "L√°tvia",
         "sigla2": "LV",
         "sigla3": "LVA",
         "codigo": "428"
@@ -981,21 +981,21 @@
     },
     {
         "ordem": 141,
-        "nome": "LÌbano",
+        "nome": "L√≠bano",
         "sigla2": "LB",
         "sigla3": "LBN",
         "codigo": "422"
     },
     {
         "ordem": 142,
-        "nome": "LibÈria",
+        "nome": "Lib√©ria",
         "sigla2": "LR",
         "sigla3": "LBR",
         "codigo": "430"
     },
     {
         "ordem": 143,
-        "nome": "LÌbia",
+        "nome": "L√≠bia",
         "sigla2": "LY",
         "sigla3": "LBY",
         "codigo": "434"
@@ -1009,7 +1009,7 @@
     },
     {
         "ordem": 145,
-        "nome": "Litu‚nia",
+        "nome": "Litu√¢nia",
         "sigla2": "LT",
         "sigla3": "LTU",
         "codigo": "440"
@@ -1030,7 +1030,7 @@
     },
     {
         "ordem": 148,
-        "nome": "MacedÙnia (Rep˙blica Yugoslava)",
+        "nome": "Maced√¥nia (Rep√∫blica Yugoslava)",
         "sigla2": "MK",
         "sigla3": "MKD",
         "codigo": "807"
@@ -1044,7 +1044,7 @@
     },
     {
         "ordem": 150,
-        "nome": "Mal·sia",
+        "nome": "Mal√°sia",
         "sigla2": "MY",
         "sigla3": "MYS",
         "codigo": "458"
@@ -1093,14 +1093,14 @@
     },
     {
         "ordem": 157,
-        "nome": "MaurÌcio",
+        "nome": "Maur√≠cio",
         "sigla2": "MU",
         "sigla3": "MUS",
         "codigo": "480"
     },
     {
         "ordem": 158,
-        "nome": "Maurit‚nia",
+        "nome": "Maurit√¢nia",
         "sigla2": "MR",
         "sigla3": "MRT",
         "codigo": "478"
@@ -1114,21 +1114,21 @@
     },
     {
         "ordem": 160,
-        "nome": "MÈxico",
+        "nome": "M√©xico",
         "sigla2": "MX",
         "sigla3": "MEX",
         "codigo": "484"
     },
     {
         "ordem": 161,
-        "nome": "MicronÈsia",
+        "nome": "Micron√©sia",
         "sigla2": "FM",
         "sigla3": "FSM",
         "codigo": "583"
     },
     {
         "ordem": 162,
-        "nome": "MoÁambique",
+        "nome": "Mo√ßambique",
         "sigla2": "MZ",
         "sigla3": "MOZ",
         "codigo": "508"
@@ -1142,14 +1142,14 @@
     },
     {
         "ordem": 164,
-        "nome": "MÙnaco",
+        "nome": "M√¥naco",
         "sigla2": "MC",
         "sigla3": "MCO",
         "codigo": "492"
     },
     {
         "ordem": 165,
-        "nome": "MongÛlia",
+        "nome": "Mong√≥lia",
         "sigla2": "MN",
         "sigla3": "MNG",
         "codigo": "496"
@@ -1177,7 +1177,7 @@
     },
     {
         "ordem": 169,
-        "nome": "NamÌbia",
+        "nome": "Nam√≠bia",
         "sigla2": "NA",
         "sigla3": "NAM",
         "codigo": "516"
@@ -1198,21 +1198,21 @@
     },
     {
         "ordem": 172,
-        "nome": "Nicar·gua",
+        "nome": "Nicar√°gua",
         "sigla2": "NI",
         "sigla3": "NIC",
         "codigo": "558"
     },
     {
         "ordem": 173,
-        "nome": "NÌger",
+        "nome": "N√≠ger",
         "sigla2": "NE",
         "sigla3": "NER",
         "codigo": "562"
     },
     {
         "ordem": 174,
-        "nome": "NigÈria",
+        "nome": "Nig√©ria",
         "sigla2": "NG",
         "sigla3": "NGA",
         "codigo": "566"
@@ -1233,21 +1233,21 @@
     },
     {
         "ordem": 177,
-        "nome": "Nova CaledÙnia",
+        "nome": "Nova Caled√¥nia",
         "sigla2": "NC",
         "sigla3": "NCL",
         "codigo": "540"
     },
     {
         "ordem": 178,
-        "nome": "Nova Zel‚ndia",
+        "nome": "Nova Zel√¢ndia",
         "sigla2": "NZ",
         "sigla3": "NZL",
         "codigo": "554"
     },
     {
         "ordem": 179,
-        "nome": "Om„",
+        "nome": "Om√£",
         "sigla2": "OM",
         "sigla3": "OMN",
         "codigo": "512"
@@ -1261,21 +1261,21 @@
     },
     {
         "ordem": 181,
-        "nome": "Panam·",
+        "nome": "Panam√°",
         "sigla2": "PA",
         "sigla3": "PAN",
         "codigo": "591"
     },
     {
         "ordem": 182,
-        "nome": "Papua-Nova GuinÈ",
+        "nome": "Papua-Nova Guin√©",
         "sigla2": "PG",
         "sigla3": "PNG",
         "codigo": "598"
     },
     {
         "ordem": 183,
-        "nome": "Paquist„o",
+        "nome": "Paquist√£o",
         "sigla2": "PK",
         "sigla3": "PAK",
         "codigo": "586"
@@ -1296,14 +1296,14 @@
     },
     {
         "ordem": 186,
-        "nome": "PolinÈsia Francesa",
+        "nome": "Polin√©sia Francesa",
         "sigla2": "PF",
         "sigla3": "PYF",
         "codigo": "258"
     },
     {
         "ordem": 187,
-        "nome": "PolÙnia",
+        "nome": "Pol√¥nia",
         "sigla2": "PL",
         "sigla3": "POL",
         "codigo": "616"
@@ -1331,42 +1331,42 @@
     },
     {
         "ordem": 191,
-        "nome": "Quirguist„o",
+        "nome": "Quirguist√£o",
         "sigla2": "KG",
         "sigla3": "KGZ",
         "codigo": "417"
     },
     {
         "ordem": 192,
-        "nome": "Rep˙blica Centro-Africana",
+        "nome": "Rep√∫blica Centro-Africana",
         "sigla2": "CF",
         "sigla3": "CAF",
         "codigo": "140"
     },
     {
         "ordem": 193,
-        "nome": "Rep˙blica Democr·tica do Congo",
+        "nome": "Rep√∫blica Democr√°tica do Congo",
         "sigla2": "CD",
         "sigla3": "COD",
         "codigo": "180"
     },
     {
         "ordem": 194,
-        "nome": "Rep˙blica Dominicana",
+        "nome": "Rep√∫blica Dominicana",
         "sigla2": "DO",
         "sigla3": "DOM",
         "codigo": "214"
     },
     {
         "ordem": 195,
-        "nome": "Rep˙blica Tcheca",
+        "nome": "Rep√∫blica Tcheca",
         "sigla2": "CZ",
         "sigla3": "CZE",
         "codigo": "203"
     },
     {
         "ordem": 196,
-        "nome": "RomÍnia",
+        "nome": "Rom√™nia",
         "sigla2": "RO",
         "sigla3": "ROM",
         "codigo": "642"
@@ -1380,7 +1380,7 @@
     },
     {
         "ordem": 198,
-        "nome": "R˙ssia (antiga URSS) - FederaÁ„o Russa",
+        "nome": "R√∫ssia (antiga URSS) - Federa√ß√£o Russa",
         "sigla2": "RU",
         "sigla3": "RUS",
         "codigo": "643"
@@ -1429,35 +1429,35 @@
     },
     {
         "ordem": 205,
-        "nome": "Santa L˙cia",
+        "nome": "Santa L√∫cia",
         "sigla2": "LC",
         "sigla3": "LCA",
         "codigo": "662"
     },
     {
         "ordem": 206,
-        "nome": "S„o Bartolomeu",
+        "nome": "S√£o Bartolomeu",
         "sigla2": "BL",
         "sigla3": "BLM",
         "codigo": "652"
     },
     {
         "ordem": 207,
-        "nome": "S„o CristÛv„o e NÈvis",
+        "nome": "S√£o Crist√≥v√£o e N√©vis",
         "sigla2": "KN",
         "sigla3": "KNA",
         "codigo": "659"
     },
     {
         "ordem": 208,
-        "nome": "S„o Martim",
+        "nome": "S√£o Martim",
         "sigla2": "MF",
         "sigla3": "MAF",
         "codigo": "663"
     },
     {
         "ordem": 209,
-        "nome": "S„o TomÈ e PrÌncipe",
+        "nome": "S√£o Tom√© e Pr√≠ncipe",
         "sigla2": "ST",
         "sigla3": "STP",
         "codigo": "678"
@@ -1478,21 +1478,21 @@
     },
     {
         "ordem": 212,
-        "nome": "SÈrvia",
+        "nome": "S√©rvia",
         "sigla2": "RS",
         "sigla3": "SRB",
         "codigo": "688"
     },
     {
         "ordem": 213,
-        "nome": "SÌria",
+        "nome": "S√≠ria",
         "sigla2": "SY",
         "sigla3": "SYR",
         "codigo": "760"
     },
     {
         "ordem": 214,
-        "nome": "Som·lia",
+        "nome": "Som√°lia",
         "sigla2": "SO",
         "sigla3": "SOM",
         "codigo": "706"
@@ -1513,28 +1513,28 @@
     },
     {
         "ordem": 217,
-        "nome": "Suazil‚ndia",
+        "nome": "Suazil√¢ndia",
         "sigla2": "SZ",
         "sigla3": "SWZ",
         "codigo": "748"
     },
     {
         "ordem": 218,
-        "nome": "Sud„o",
+        "nome": "Sud√£o",
         "sigla2": "SD",
         "sigla3": "SDN",
         "codigo": "736"
     },
     {
         "ordem": 219,
-        "nome": "SuÈcia",
+        "nome": "Su√©cia",
         "sigla2": "SE",
         "sigla3": "SWE",
         "codigo": "752"
     },
     {
         "ordem": 220,
-        "nome": "SuÌÁa",
+        "nome": "Su√≠√ßa",
         "sigla2": "CH",
         "sigla3": "CHE",
         "codigo": "756"
@@ -1548,14 +1548,14 @@
     },
     {
         "ordem": 222,
-        "nome": "Tadjiquist„o",
+        "nome": "Tadjiquist√£o",
         "sigla2": "TJ",
         "sigla3": "TJK",
         "codigo": "762"
     },
     {
         "ordem": 223,
-        "nome": "Tail‚ndia",
+        "nome": "Tail√¢ndia",
         "sigla2": "TH",
         "sigla3": "THA",
         "codigo": "764"
@@ -1569,28 +1569,28 @@
     },
     {
         "ordem": 225,
-        "nome": "Tanz‚nia",
+        "nome": "Tanz√¢nia",
         "sigla2": "TZ",
         "sigla3": "TZA",
         "codigo": "834"
     },
     {
         "ordem": 226,
-        "nome": "TerritÛrio Brit‚nico do Oceano Ìndico",
+        "nome": "Territ√≥rio Brit√¢nico do Oceano √≠ndico",
         "sigla2": "IO",
         "sigla3": "IOT",
         "codigo": "086"
     },
     {
         "ordem": 227,
-        "nome": "TerritÛrios do Sul da FranÁa",
+        "nome": "Territ√≥rios do Sul da Fran√ßa",
         "sigla2": "TF",
         "sigla3": "ATF",
         "codigo": "260"
     },
     {
         "ordem": 228,
-        "nome": "TerritÛrios Palestinos Ocupados",
+        "nome": "Territ√≥rios Palestinos Ocupados",
         "sigla2": "PS",
         "sigla3": "PSE",
         "codigo": "275"
@@ -1625,14 +1625,14 @@
     },
     {
         "ordem": 233,
-        "nome": "TunÌsia",
+        "nome": "Tun√≠sia",
         "sigla2": "TN",
         "sigla3": "TUN",
         "codigo": "788"
     },
     {
         "ordem": 234,
-        "nome": "Turcomenist„o",
+        "nome": "Turcomenist√£o",
         "sigla2": "TM",
         "sigla3": "TKM",
         "codigo": "795"
@@ -1653,7 +1653,7 @@
     },
     {
         "ordem": 237,
-        "nome": "Ucr‚nia",
+        "nome": "Ucr√¢nia",
         "sigla2": "UA",
         "sigla3": "UKR",
         "codigo": "804"
@@ -1674,7 +1674,7 @@
     },
     {
         "ordem": 240,
-        "nome": "Uzbequist„o",
+        "nome": "Uzbequist√£o",
         "sigla2": "UZ",
         "sigla3": "UZB",
         "codigo": "860"
@@ -1702,21 +1702,21 @@
     },
     {
         "ordem": 244,
-        "nome": "Vietn„",
+        "nome": "Vietn√£",
         "sigla2": "VN",
         "sigla3": "VNM",
         "codigo": "704"
     },
     {
         "ordem": 245,
-        "nome": "Z‚mbia",
+        "nome": "Z√¢mbia",
         "sigla2": "ZM",
         "sigla3": "ZMB",
         "codigo": "894"
     },
     {
         "ordem": 246,
-        "nome": "Zimb·bue",
+        "nome": "Zimb√°bue",
         "sigla2": "ZW",
         "sigla3": "ZWE",
         "codigo": "716"
