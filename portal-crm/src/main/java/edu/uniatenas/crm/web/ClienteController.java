@@ -128,19 +128,11 @@ public class ClienteController {
 		String mensagem = "";
 		if (!results.hasErrors()) {
 			if(isCPF(cliente.getCPF().replace(".", "").replace("-", ""))) {
-				if(service.getClienteByCPF(cliente.getCPF())) {
-					mensagem = "CPF Já Cadastrado";
-					System.out.println(results.getAllErrors());
-					ModelAndView view = new ModelAndView("form-cliente");
-					view.addObject("mensagem", mensagem);
-					return view;
-				}else {
-					service.saveCliete(cliente);
-					mensagem = "Cadastrado com Sucesso!";
-					ModelAndView view = new ModelAndView("form-cliente");
-					view.addObject("mensagem", mensagem);
-					return view;
-				}
+				service.saveCliete(cliente);
+				mensagem = "Cadastrado com Sucesso!";
+				ModelAndView view = new ModelAndView("form-cliente");
+				view.addObject("mensagem", mensagem);
+				return view;
 			}else {
 				mensagem = "CPF inválido";
 				ModelAndView view = new ModelAndView("cliente-update");
