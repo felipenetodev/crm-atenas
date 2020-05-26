@@ -23,17 +23,36 @@
 			<tr th:if="${clientes.empty}">
 				<td colspan="2">Sem Clientes Cadastrados</td>
 			</tr>
-			<tr th:each="cliente : ${clientes}" th:if="${cliente.isAtivo} != false">
+			<tr th:each="cliente : ${clientes}"
+				th:if="${cliente.isAtivo} != false">
 				<td><span th:text="${cliente.nome}"> </span></td>
 				<td><span th:text="${cliente.sobrenome}"> </span></td>
 				<td><span th:text="${cliente.CPF}"> </span></td>
 				<td><span th:text="${cliente.telefonePrincipal}"> </span></td>
 				<td><span th:text="${cliente.email}"> </span></td>
-				<td><button class="btn btn-sm btn-warning" type="button" th:attr="onclick = ${'editarCliente(' + cliente.id + ')'}">Editar</button>
-				<button class="btn btn-sm btn-danger" type="button" th:attr="onclick = ${'modalRemover(' + cliente.id + ')'}">Excluir</button>
+				<td style="text-align: center">
+					<button class="btn btn-sm btn-warning" type="button"
+						th:attr="onclick = ${'editarCliente(' + cliente.id + ')'}">Editar</button>
+					<button class="btn btn-sm btn-danger" type="button"
+						th:attr="onclick = ${'modalRemover(' + cliente.id + ')'}">Excluir</button>
+					<button class="btn btn-sm btn-success" type="button"
+						th:attr="onclick = ${'converterInscrito(' + cliente.id + ',' + 1 +')'}">Converter
+						Inscrito</button>
+					<button class="btn btn-sm btn-primary" type="button"
+						th:attr="onclick = ${'modalRemover(' + cliente.id + ')'}">Converter
+						Pendente</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	<nav aria-label="Paginação" class="mt-2">
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+		</ul>
+	</nav>
 </div>
 </html>

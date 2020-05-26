@@ -20,6 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.safeguard.constraint.annotations.Verify;
 import br.com.safeguard.types.ParametroTipo;
+import edu.uniatenas.crm.cliente.enums.Estado;
 import edu.uniatenas.crm.cliente.enums.EstadoCivil;
 import edu.uniatenas.crm.cliente.enums.Grau;
 import edu.uniatenas.crm.cliente.enums.Sexo;
@@ -51,6 +52,8 @@ public class Cliente implements Serializable {
 	private String nacionalidade;
 	@Enumerated(EnumType.STRING)
 	private Grau grauDeInstrucao;
+	@Enumerated(EnumType.STRING)
+	private Estado estado = Estado.LEAD;
 	@NotBlank
 	private String telefonePrincipal;
 	private String telefoneComplementar;
@@ -60,6 +63,14 @@ public class Cliente implements Serializable {
 	private String documentoComplementar;
 	
 	private Boolean isAtivo = true;
+	
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
 	public Long getId() {
 		return id;
@@ -200,6 +211,7 @@ public class Cliente implements Serializable {
 		result = prime * result + ((sobrenome == null) ? 0 : sobrenome.hashCode());
 		result = prime * result + ((telefoneComplementar == null) ? 0 : telefoneComplementar.hashCode());
 		result = prime * result + ((telefonePrincipal == null) ? 0 : telefonePrincipal.hashCode());
+		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		return result;
 	}
 
@@ -240,6 +252,8 @@ public class Cliente implements Serializable {
 		} else if (!estadoNatal.equals(other.estadoNatal))
 			return false;
 		if (grauDeInstrucao != other.grauDeInstrucao)
+			return false;
+		if (estado != other.estado)
 			return false;
 		if (id == null) {
 			if (other.id != null)

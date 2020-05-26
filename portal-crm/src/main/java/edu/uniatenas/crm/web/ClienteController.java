@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import edu.uniatenas.crm.cliente.entity.Cliente;
+import edu.uniatenas.crm.cliente.enums.Estado;
 import edu.uniatenas.crm.cliente.service.ClienteService;
 
 @Controller
@@ -122,6 +123,15 @@ public class ClienteController {
 		return view;
 	}
 	
+	@PostMapping("/updateEstado/{id}")
+	@ResponseBody
+	public String updateEstado(@PathVariable("id") Long id, @RequestBody String estado) {
+		Cliente cliente = service.getCliente(id);
+		//Fazer o IF para selecionar o estado a ser alterado.
+		cliente.setEstado(Estado.INSCRITO);
+		service.saveCliete(cliente);
+		return id + estado;
+	}
 	
 	@RequestMapping("/update/save")
 	public ModelAndView attCliente(@Valid Cliente cliente, BindingResult results) {
