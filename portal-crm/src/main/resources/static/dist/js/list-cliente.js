@@ -14,7 +14,10 @@ function modalRemover(id){
 	                 contentType: "application/json; charset=utf-8",
 
 	                 success: function (data) {
-	                     console.log(data)
+	                	 $.alert({
+	                		    title: 'Sucesso!',
+	                		    content: 'Lead Removido com Sucesso!',
+	                		});
 	                     window.location.reload();
 	                 },
 	                 
@@ -35,13 +38,14 @@ function editarCliente(id){
 	window.location.href = "/cliente/update/"+id;
 }
 
-function converterInscrito(id, estado){
+function converterLead(id, estado){
 	
-	/* 1 = Inscrito  
-	 * 2 = Pré - Vestibular
-	 * 3 = Vestibular
-	 * 4 = Pré-Matricula
-	 * 5 = Matriculado
+	/* 
+	 * 1 = Lead
+	 * 2 = Pre-Vestibular
+	 * 3 = Pre-Matricula
+	 * 4 = Matriculado
+	 * 5 = Pendente
 	 * */
 	
 	$.confirm({
@@ -59,7 +63,10 @@ function converterInscrito(id, estado){
 	                 contentType: "application/json; charset=utf-8",
 
 	                 success: function (data) {
-	                     console.log(data)
+	                	 $.alert({
+	                		    title: 'Sucesso',
+	                		    content: 'Lead Convertido com Sucesso!',
+	                		});
 	                 },
 	                 
 	                 error: function (xhr, status, error) {

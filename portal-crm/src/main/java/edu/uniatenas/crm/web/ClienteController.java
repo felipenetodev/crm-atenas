@@ -1,6 +1,7 @@
 package edu.uniatenas.crm.web;
 
 import java.util.InputMismatchException;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -24,10 +25,23 @@ public class ClienteController {
 	@Autowired
 	private ClienteService service;
 
-	@GetMapping("/")
-	public ModelAndView list() {
+	@GetMapping("/{tipo}")
+	public ModelAndView list(@PathVariable("tipo") String tipo) {
 		ModelAndView view = new ModelAndView("cliente-list");
-		view.addObject("clientes", service.getAllClientes());
+		
+		if(tipo.equals("lead")) {
+			view.addObject("clientes", service.getClienteByEstado(Estado.LEAD));
+		}else if(tipo.equals("prevestibular")) {
+			view.addObject("clientes", service.getClienteByEstado(Estado.PRE_VESTIBULAR));
+		}else if(tipo.equals("prematricula")) {
+			view.addObject("clientes", service.getClienteByEstado(Estado.PRE_MATRICULA));
+		}else if(tipo.equals("matriculados")) {
+			view.addObject("clientes", service.getClienteByEstado(Estado.MATRICULADO));
+		}else if(tipo.equals("pendentes")) {
+			view.addObject("clientes", service.getClienteByEstado(Estado.PENDENTE));
+		}else {
+			view.addObject("clientes", service.getAllClientes());
+		}
 		return view;
 	}
 
@@ -112,7 +126,7 @@ public class ClienteController {
 		} else {
 			System.out.println(results.getAllErrors());
 		}
-		return list();
+		return list("lead");
 	}
 
 	@RequestMapping("/update/{id}")
@@ -126,11 +140,23 @@ public class ClienteController {
 	@PostMapping("/updateEstado/{id}")
 	@ResponseBody
 	public String updateEstado(@PathVariable("id") Long id, @RequestBody String estado) {
+		
+		
 		Cliente cliente = service.getCliente(id);
-		//Fazer o IF para selecionar o estado a ser alterado.
-		cliente.setEstado(Estado.INSCRITO);
+		if(estado.equals("1")) {
+			cliente.setEstado(Estado.LEAD);
+		}else if(estado.equals("2")) {
+			cliente.setEstado(Estado.PRE_VESTIBULAR);
+		}else if(estado.equals("3")) {
+			cliente.setEstado(Estado.PRE_MATRICULA);
+		}else if(estado.equals("4")) {
+			cliente.setEstado(Estado.MATRICULADO);
+		}else if(estado.equals("5")) {
+			cliente.setEstado(Estado.PENDENTE);
+		}
+		
 		service.saveCliete(cliente);
-		return id + estado;
+		return "Lead Convertido com Sucesso";
 	}
 	
 	@RequestMapping("/update/save")
