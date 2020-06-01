@@ -2,8 +2,6 @@ package edu.uniatenas.crm.usuario.service;
 
 import java.util.List;
 
-import javax.persistence.criteria.Order;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -20,20 +18,8 @@ public class UsuarioService {
 	public List<Usuario> getAll(){
 		return repository.findAll(Sort.by(Direction.ASC, "login"));
 	}
+	
 	public void save(Usuario usuario) {
 		repository.save(usuario);
 	}
-	public void alterStatus(Usuario usuario) {
-		if(usuario.isAtividade()) {
-			usuario.setAtividade(false);
-		}else {
-			usuario.setAtividade(true);
-		}
-		repository.save(usuario);
-	}
-	public Usuario login(String login, String senha) {
-		Usuario usuario = repository.findByLoginAndSenha(login, senha);
-		return usuario;
-	}
-
 }

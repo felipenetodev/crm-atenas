@@ -1,25 +1,54 @@
 package edu.uniatenas.crm.usuario.entity;
 
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Usuario {
+public class Usuario implements UserDetails, Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String login, senha;
-	private boolean atividade;
+	private String login; 
+	private String senha;
+	private String nomeCompleto;
+	private String cpf;
+	private boolean isAtivo;
+	
+	@ManyToMany
+	@JoinTable( 
+	        name = "usuarios_roles", 
+	        joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), 
+	        inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role")) 
+    private List<Role> roles;
 	
 	
-	public boolean isAtividade() {
-		return atividade;
+	public Usuario() {}
+	
+	public Usuario(Long id, String login, String senha, String nomeCompleto, String cpf, boolean isAtivo) {
+		super();
+		this.id = id;
+		this.login = login;
+		this.senha = senha;
+		this.nomeCompleto = nomeCompleto;
+		this.cpf = cpf;
+		this.isAtivo = isAtivo;
 	}
-	public void setAtividade(boolean atividade) {
-		this.atividade = atividade;
-	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -38,6 +67,117 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public boolean isAtivo() {
+		return isAtivo;
+	}
+	public void setAtivo(boolean isAtivo) {
+		this.isAtivo = isAtivo;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + (isAtivo ? 1231 : 1237);
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
+		result = prime * result + ((nomeCompleto == null) ? 0 : nomeCompleto.hashCode());
+		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		if (cpf == null) {
+			if (other.cpf != null)
+				return false;
+		} else if (!cpf.equals(other.cpf))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (isAtivo != other.isAtivo)
+			return false;
+		if (login == null) {
+			if (other.login != null)
+				return false;
+		} else if (!login.equals(other.login))
+			return false;
+		if (nomeCompleto == null) {
+			if (other.nomeCompleto != null)
+				return false;
+		} else if (!nomeCompleto.equals(other.nomeCompleto))
+			return false;
+		if (senha == null) {
+			if (other.senha != null)
+				return false;
+		} else if (!senha.equals(other.senha))
+			return false;
+		return true;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return (Collection<? extends GrantedAuthority>) this.roles;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.senha;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.nomeCompleto;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
+	}	
 }

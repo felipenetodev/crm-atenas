@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	public ModelAndView home() {
-		
 		ModelAndView view = new ModelAndView("index");
 		return view;
 	}
