@@ -12,70 +12,67 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
 
+import org.hibernate.annotations.NaturalId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class Usuario implements UserDetails, Serializable{
-
 	
 	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@NaturalId
 	private String login; 
+	
 	private String senha;
 	private String nomeCompleto;
 	private String cpf;
 	private boolean isAtivo;
 	
 	@ManyToMany
-	@JoinTable( 
-	        name = "usuarios_roles", 
-	        joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), 
-	        inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role")) 
     private List<Role> roles;
 	
-	
 	public Usuario() {}
-	
-	public Usuario(Long id, String login, String senha, String nomeCompleto, String cpf, boolean isAtivo) {
-		super();
-		this.id = id;
+
+	public Usuario(String login, String senha, String nomeCompleto, String cpf, boolean isAtivo, List<Role> roles) {
 		this.login = login;
 		this.senha = senha;
 		this.nomeCompleto = nomeCompleto;
 		this.cpf = cpf;
 		this.isAtivo = isAtivo;
+		this.roles = roles;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public String getLogin() {
 		return login;
 	}
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}
+
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
+
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
@@ -83,8 +80,21 @@ public class Usuario implements UserDetails, Serializable{
 	public boolean isAtivo() {
 		return isAtivo;
 	}
+
 	public void setAtivo(boolean isAtivo) {
 		this.isAtivo = isAtivo;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
@@ -92,10 +102,10 @@ public class Usuario implements UserDetails, Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + (isAtivo ? 1231 : 1237);
 		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		result = prime * result + ((nomeCompleto == null) ? 0 : nomeCompleto.hashCode());
+		result = prime * result + ((roles == null) ? 0 : roles.hashCode());
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		return result;
 	}
@@ -114,11 +124,6 @@ public class Usuario implements UserDetails, Serializable{
 				return false;
 		} else if (!cpf.equals(other.cpf))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
 		if (isAtivo != other.isAtivo)
 			return false;
 		if (login == null) {
@@ -130,6 +135,11 @@ public class Usuario implements UserDetails, Serializable{
 			if (other.nomeCompleto != null)
 				return false;
 		} else if (!nomeCompleto.equals(other.nomeCompleto))
+			return false;
+		if (roles == null) {
+			if (other.roles != null)
+				return false;
+		} else if (!roles.equals(other.roles))
 			return false;
 		if (senha == null) {
 			if (other.senha != null)

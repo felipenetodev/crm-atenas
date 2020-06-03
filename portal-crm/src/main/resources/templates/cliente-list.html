@@ -5,6 +5,8 @@
 <h3 layout:fragment="page-title">Clientes</h3>
 <h3 layout:fragment="form-title">Cadastro</h3>
 <div layout:fragment="content">
+	<div th:text = "${nomeUsuario}"></div>
+	<div th:text = "${permissoes.get(0).getAuthority()}"></div>
 	<button class="btn btn-sm btn-success" type="button"
 		onclick="window.location.href='/cliente/novo'">Novo Cliente</button>
 	<hr></hr>

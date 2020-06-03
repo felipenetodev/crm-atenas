@@ -8,10 +8,5 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UsuarioWeb {
 
-	@RequestMapping("/login")
-	public ModelAndView create() {
-		ModelAndView view = new ModelAndView("form-cliente");
-		return view;
-	}
 	
 }

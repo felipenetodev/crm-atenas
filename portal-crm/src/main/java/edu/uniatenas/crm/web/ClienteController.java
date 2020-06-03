@@ -1,11 +1,13 @@
 package edu.uniatenas.crm.web;
 
 import java.util.InputMismatchException;
-import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,16 +20,36 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.uniatenas.crm.cliente.entity.Cliente;
 import edu.uniatenas.crm.cliente.enums.Estado;
 import edu.uniatenas.crm.cliente.service.ClienteService;
+import edu.uniatenas.crm.usuario.entity.Role;
+import edu.uniatenas.crm.usuario.entity.Usuario;
+import edu.uniatenas.crm.usuario.enums.TipoRole;
+import edu.uniatenas.crm.usuario.service.UsuarioService;
 
 @Controller
 @RequestMapping("/cliente")
 public class ClienteController {
+	
 	@Autowired
 	private ClienteService service;
+	
+	@Autowired
+	private UsuarioService Uservice;
 
 	@GetMapping("/{tipo}")
 	public ModelAndView list(@PathVariable("tipo") String tipo) {
+		
+		Usuario u = Uservice.getCurrentUser();
 		ModelAndView view = new ModelAndView("cliente-list");
+		view.addObject("nomeUsuario", u.getNomeCompleto());
+		view.addObject("permissoes", u.getRoles());	
+		
+		//Parei Aqui.
+		if(u.getRoles().contains("ROLE_ADMIN")) {
+			System.out.println("Deu");
+		}else {
+			System.out.println("Deu ruim");
+		}
+	
 		
 		if(tipo.equals("lead")) {
 			view.addObject("clientes", service.getClienteByEstado(Estado.LEAD));
@@ -42,6 +64,7 @@ public class ClienteController {
 		}else {
 			view.addObject("clientes", service.getAllClientes());
 		}
+		
 		return view;
 	}
 
