@@ -1,6 +1,7 @@
 package edu.uniatenas.crm.web;
 
 import java.util.InputMismatchException;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -41,15 +42,7 @@ public class ClienteController {
 		Usuario u = Uservice.getCurrentUser();
 		ModelAndView view = new ModelAndView("cliente-list");
 		view.addObject("nomeUsuario", u.getNomeCompleto());
-		view.addObject("permissoes", u.getRoles());	
-		
-		//Parei Aqui.
-		if(u.getRoles().contains("ROLE_ADMIN")) {
-			System.out.println("Deu");
-		}else {
-			System.out.println("Deu ruim");
-		}
-	
+		view.addObject("permissoes", u.getRoles());		
 		
 		if(tipo.equals("lead")) {
 			view.addObject("clientes", service.getClienteByEstado(Estado.LEAD));

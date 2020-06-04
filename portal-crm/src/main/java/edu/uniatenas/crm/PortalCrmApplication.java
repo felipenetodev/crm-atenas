@@ -9,6 +9,6 @@ import edu.uniatenas.crm.usuario.entity.Role;
 @SpringBootApplication
 public class PortalCrmApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(PortalCrmApplication.class, args);		
+		SpringApplication.run(PortalCrmApplication.class, args);
 	}
 }

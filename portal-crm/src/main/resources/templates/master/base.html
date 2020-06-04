@@ -51,9 +51,15 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 	<aside class="main-sidebar sidebar-dark-primary elevation-4">
-		<a href="/cliente/" class="brand-link"> 
-			<span class="brand-text ">SISTEMA CRM</span>
+		<a href="/cliente/lead" class="brand-link text-justify text-center text-wrap text-white">  
+			Sistema CRM
 		</a>
+		<div> 
+			<h4 class="text-justify text-center text-wrap text-white" th:text="'Bem Vindo: '+ ${nomeUsuario}"></h4>
+			<div class="d-flex justify-content-center">
+				<button class="btn btn-danger" type="button" onclick="window.location.href='/logout'">Sair</button>
+			</div>
+		</div>
 		<div class="sidebar">
 			<nav class="mt-2">
 				<ul class="nav nav-pills nav-sidebar flex-column"
@@ -95,6 +101,86 @@
 						</ul>
 				</ul>
 			</nav>
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="#"
+						class="nav-link active"> <i
+							class="nav-icon fas fa-address-book"> </i> Meus Leads <i
+							class="right fas fa-angle-left"> </i>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/lead"
+								class="nav-link "> <i class="fa fa-user nav-icon"></i> Base
+									de Leads
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/prevestibular"
+								class="nav-link "> <i class="fa fa-book nav-icon"></i>
+									Pré-Vestibular
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/prematricula"
+								class="nav-link "> <i class="fa fa-book-reader nav-icon"></i>
+									Pré-Matricula
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/matriculados"
+								class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i>
+									Matriculados
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/pendentes"
+								class="nav-link "> <i class="fa fa-user-friends nav-icon"></i>
+									Pendentes
+							</a></li>
+						</ul>
+				</ul>
+			</nav>
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="#"
+						class="nav-link active"> <i
+							class="nav-icon fas fa-address-book"> </i> Administração <i
+							class="right fas fa-angle-left"> </i>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/lead"
+								class="nav-link "> <i class="fa fa-user nav-icon"></i> Base
+									de Leads
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/prevestibular"
+								class="nav-link "> <i class="fa fa-book nav-icon"></i>
+									Pré-Vestibular
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/prematricula"
+								class="nav-link "> <i class="fa fa-book-reader nav-icon"></i>
+									Pré-Matricula
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/matriculados"
+								class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i>
+									Matriculados
+							</a></li>
+						</ul>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/cliente/pendentes"
+								class="nav-link "> <i class="fa fa-user-friends nav-icon"></i>
+									Pendentes
+							</a></li>
+						</ul>
+				</ul>
+			</nav>		
 		</div>
 
 	</aside>
