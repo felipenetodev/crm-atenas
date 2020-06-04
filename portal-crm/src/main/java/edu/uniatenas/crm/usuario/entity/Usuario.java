@@ -28,7 +28,7 @@ public class Usuario implements UserDetails, Serializable{
 	private String senha;
 	private String nomeCompleto;
 	private String cpf;
-	private boolean isAtivo;
+	private boolean isAtivo = true;
 	
 	@ManyToMany
     private List<Role> roles;

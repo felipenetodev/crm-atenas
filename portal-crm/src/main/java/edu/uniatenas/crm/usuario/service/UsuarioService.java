@@ -7,8 +7,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import edu.uniatenas.crm.cliente.entity.Cliente;
 import edu.uniatenas.crm.usuario.entity.Usuario;
 import edu.uniatenas.crm.usuario.repository.UsuarioRepository;
 
@@ -22,12 +25,23 @@ public class UsuarioService {
 	}
 	
 	public void save(Usuario usuario) {
+		String senha = new BCryptPasswordEncoder().encode(usuario.getSenha());
+		usuario.setSenha(senha);
 		repository.save(usuario);
 	}
 	
 	public Usuario getUserByUserName(String username) {
 		Usuario u = repository.findByLogin(username);
 		return u;
+	}
+	
+	public Boolean getClienteByCPF(String cpf) {
+		Usuario u = repository.findByCpf(cpf);
+		if(u == null) {
+			return false;
+		}else {
+			return true;
+		}
 	}
 	
 	public Usuario getCurrentUser() {

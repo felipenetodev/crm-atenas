@@ -9,5 +9,6 @@ import edu.uniatenas.crm.usuario.entity.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	Usuario findByLogin(String login);
+	Usuario findByCpf(String Cpf);
 	
 }

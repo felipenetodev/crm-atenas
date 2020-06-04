@@ -64,6 +64,9 @@ public class ClienteController {
 	@RequestMapping("/novo")
 	public ModelAndView create() {
 		ModelAndView view = new ModelAndView("form-cliente");
+		Usuario u = Uservice.getCurrentUser();
+		view.addObject("nomeUsuario", u.getNomeCompleto());
+		view.addObject("permissoes", u.getRoles());	
 		view.addObject("cliente", new Cliente());
 		return view;
 	}
