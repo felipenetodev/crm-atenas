@@ -1,10 +1,11 @@
-function modalRemoverUsuario(nomeUsuario){
-	$.confirm({
+function modalRemoverUsuario(teste){
+	alert(teste);
+	/*$.confirm({
 	    title: 'Confirmar a Exclusão ?',
 	    content: 'Tem certeza que quer excluir o registro ?',
 	    buttons: {
 	        confirmar: function () {
-	        	 /*$.ajax({
+	        	 $.ajax({
 	                 url: '/cliente/delete',
 	                 data: id,
 	                 type: 'POST',
@@ -25,13 +26,13 @@ function modalRemoverUsuario(nomeUsuario){
 	                	 var err = eval("(" + xhr.responseText + ")");
 	                	 console.log(err.Message);
 	                 }
-	             });*/
+	             });
 	        },
 	        cancelar: function () {
 	            $.alert('Cancelado!');
 	        },
 	    }
-	});  
+	});  */
 }
 
 function editarUsuario(id){
