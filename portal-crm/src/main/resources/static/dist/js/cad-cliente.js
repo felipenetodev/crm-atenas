@@ -3,7 +3,7 @@ $(document).ready(
 			$.getJSON('/dist/js/estados_cidades.json', function(data) {
 				var items = [];
 				var options = '<option value="">Selecione.</option>';
-
+				
 				$.each(data, function(key, val) {
 					options += '<option th:value="' + val.nome + '">'
 							+ val.nome + '</option>';
@@ -40,25 +40,21 @@ $(document).ready(
 $(document).ready(
 		function() {
 			$.getJSON('/dist/js/paises.json', function(data) {
-
+				
 				var items = [];
 				var options = '<option value="">Selecione.</option>';
-
+				
 				$.each(data, function(key, val) {
-					options += '<option th:value="' + val.nome + '">' + val.nome + '</option>';
+					options += '<option th:value="' + val.nome + '">'
+							+ val.nome + '</option>';
+					
 				});
-	
+				
 				$("#nacionalidade").append(options);
 			});
-			
-			
-			$('#btn-excluir-cliente').click(function(){
-				var id = this.getAttribute('data-idCliente')
-				 alert(id)
-			});
-		})
-		
-  $(document).ready(function () { 
+})
+
+ $(document).ready(function () { 
 	  $("#CPF").mask('000.000.000-00', {reverse: true});
 	  $("#telefone").mask("(00) 0000-00009")
 	  $("#telefoneComplementar").mask("(00) 0000-00009")

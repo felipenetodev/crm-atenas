@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.uniatenas.crm.usuario.entity.Usuario;
+import edu.uniatenas.crm.usuario.service.RoleService;
 import edu.uniatenas.crm.usuario.service.UsuarioService;
 
 
@@ -24,6 +25,9 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService Uservice;
 	
+	@Autowired
+	private RoleService Rservice;
+	
 	@GetMapping("/todos")
 	public ModelAndView list() {
 		
@@ -32,6 +36,7 @@ public class UsuarioController {
 		view.addObject("nomeUsuario", u.getNomeCompleto());
 		view.addObject("permissoes", u.getRoles());	
 		view.addObject("usuarios", Uservice.getAll());
+		
 		return view;
 	}	
 	
@@ -43,6 +48,7 @@ public class UsuarioController {
 		view.addObject("nomeUsuario", u.getNomeCompleto());
 		view.addObject("permissoes", u.getRoles());	
 		view.addObject("usuario", new Usuario());
+		view.addObject("roles", Rservice.getAll());
 		return view;
 	}
 	

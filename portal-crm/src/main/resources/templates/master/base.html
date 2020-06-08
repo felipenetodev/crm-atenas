@@ -55,6 +55,7 @@
 			Sistema CRM
 		</a>
 		<div> 
+		<br>
 			<h4 class="text-justify text-center text-wrap text-white" th:text="'Bem Vindo: '+ ${nomeUsuario}"></h4>
 			<div class="d-flex justify-content-center">
 				<button class="btn btn-danger" type="button" onclick="window.location.href='/logout'">Sair</button>
@@ -223,8 +224,12 @@
 		src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 	<script th:src="@{/dist/js/cad-cliente.js}"
 		src="dist/js/cad-cliente.js" charset="iso-8859-1"></script>
+		
 	<script th:src="@{/dist/js/list-cliente.js}"
 		src="dist/js/list-cliente.js" charset="iso-8859-1"></script>
+		
+		<script th:src="@{/dist/js/list-usuario.js}"
+		src="dist/js/list-usuario.js" charset="iso-8859-1"></script>
 	<script
 		th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js}"
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>

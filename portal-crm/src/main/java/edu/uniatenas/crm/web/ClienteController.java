@@ -160,7 +160,6 @@ public class ClienteController {
 	@ResponseBody
 	public String updateEstado(@PathVariable("id") Long id, @RequestBody String estado) {
 		
-		
 		Cliente cliente = service.getCliente(id);
 		if(estado.equals("1")) {
 			cliente.setEstado(Estado.LEAD);

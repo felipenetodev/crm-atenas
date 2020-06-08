@@ -26,7 +26,7 @@
 				<div class="form-group">
 					<label for="EstadoNatal"> Estado Natal: </label> 
 					<select	class="form-control" id="estados" th:field="*{estadoNatal}" required>
-						<option th:value = "${cliente.estadoNatal}" th:text="${cliente.estadoNatal}"></option>
+						<option th:value = "${cliente.getEstadoNatal()}" th:text="${cliente.estadoNatal}"></option>
 					</select>
 				</div>
 			</div>
