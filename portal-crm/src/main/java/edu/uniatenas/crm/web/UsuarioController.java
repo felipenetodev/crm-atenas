@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.uniatenas.crm.usuario.entity.Usuario;
@@ -57,23 +59,29 @@ public class UsuarioController {
 		String mensagem = "";
 		if (!results.hasErrors()) {
 			if(isCPF(usuario.getCpf().replace(".", "").replace("-", ""))) {
-				if(Uservice.getClienteByCPF(usuario.getCpf())) {
+				if(Uservice.getUsuarioByCPF(usuario.getCpf())) {
 					mensagem = "CPF Já Cadastrado";
 					System.out.println(results.getAllErrors());
 					ModelAndView view = new ModelAndView("form-usuario");
 					view.addObject("mensagem", mensagem);
+					view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+					view.addObject("roles", Rservice.getAll());
 					return view;
 				}else {
 					Uservice.save(usuario);
 					mensagem = "Cadastrado com Sucesso!";
 					ModelAndView view = new ModelAndView("form-usuario");
 					view.addObject("mensagem", mensagem);
+					view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+					view.addObject("roles", Rservice.getAll());
 					return view;
 				}
 			}else {
 				mensagem = "CPF Inválido";
 				ModelAndView view = new ModelAndView("form-usuario");
 				view.addObject("mensagem", mensagem);
+				view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+				view.addObject("roles", Rservice.getAll());
 				return view;
 			}
 		}else {
@@ -81,8 +89,81 @@ public class UsuarioController {
 			mensagem = "Erro";
 			ModelAndView view = new ModelAndView("form-usuario");
 			view.addObject("mensagem", mensagem);
+			view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+			view.addObject("roles", Rservice.getAll());
 			return view;
 		}
+	}
+	
+	@RequestMapping("/update/save")
+	public ModelAndView attUsuario(@Valid Usuario usuario, BindingResult results) {		
+		String mensagem = "";
+
+		if (!results.hasErrors()) {
+			if(isCPF(usuario.getCpf().replace(".", "").replace("-", ""))) {
+				System.out.println(usuario.getNomeCompleto());
+				Uservice.save(usuario);
+				mensagem = "Alterado com Sucesso!";
+				ModelAndView view = new ModelAndView("usuario-update");
+				view.addObject("mensagem", mensagem);
+				view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+				view.addObject("roles", Rservice.getAll());
+				return view;
+			}else {
+				mensagem = "CPF inválido";
+				ModelAndView view = new ModelAndView("usuario-update");
+				view.addObject("mensagem", mensagem);
+				view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+				view.addObject("roles", Rservice.getAll());
+				return view;
+			}
+		}else {
+			mensagem = "Erro";
+			ModelAndView view = new ModelAndView("usuario-update");
+			view.addObject("mensagem", mensagem);
+			view.addObject("roleAtual", usuario.getRoles().get(0).getAuthority());
+			view.addObject("roles", Rservice.getAll());
+			return view;
+		}
+	}
+	
+	@PostMapping("/delete")
+	@ResponseBody
+	public ModelAndView delete(@RequestBody String login, BindingResult results) {
+		if (!results.hasErrors()) {
+			Uservice.deleteUsuario(login);
+		} else {
+			System.out.println(results.getAllErrors());
+		}
+		return list();
+	}
+	
+	@RequestMapping("/update/{nomeDeUsuario}")
+	public ModelAndView update(@PathVariable("nomeDeUsuario") String nomeDeUsuario) {
+		ModelAndView view = new ModelAndView("usuario-update");
+		Usuario u = Uservice.getCurrentUser();
+		view.addObject("nomeUsuario", u.getNomeCompleto()); 
+		Usuario user = Uservice.getUserByUserName(nomeDeUsuario);
+		user.setSenha("#$@#$GE");
+		view.addObject("usuario", user);
+		view.addObject("roleAtual", user.getRoles().get(0).getAuthority());
+		view.addObject("roles", Rservice.getAll());
+		return view;
+	}
+
+	@RequestMapping("/minhaconta/")
+	public ModelAndView updateMinhaConta() {
+		ModelAndView view = new ModelAndView("usuario-update-minhaconta");
+
+		Usuario u = Uservice.getCurrentUser();
+
+		view.addObject("nomeUsuario", u.getNomeCompleto()); 
+		Usuario user = Uservice.getUserByUserName(u.getLogin());
+		user.setSenha("");
+		view.addObject("usuario", user);
+		view.addObject("roleAtual", user.getRoles().get(0).getAuthority());
+		view.addObject("roles", Rservice.getAll());
+		return view;
 	}
 	
 	public static boolean isCPF(String CPF) {

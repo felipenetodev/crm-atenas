@@ -1,13 +1,12 @@
-function modalRemoverUsuario(teste){
-	alert(teste);
-	/*$.confirm({
+function modalRemoverUsuario(nomeDeUsuario){
+	$.confirm({
 	    title: 'Confirmar a Exclusão ?',
 	    content: 'Tem certeza que quer excluir o registro ?',
 	    buttons: {
 	        confirmar: function () {
 	        	 $.ajax({
-	                 url: '/cliente/delete',
-	                 data: id,
+	                 url: '/usuario/delete',
+	                 data: nomeDeUsuario,
 	                 type: 'POST',
 
 	                 processData: false,
@@ -19,22 +18,23 @@ function modalRemoverUsuario(teste){
 	                		    title: 'Sucesso!',
 	                		    content: 'Lead Removido com Sucesso!',
 	                		});
+	                	 
 	                     window.location.reload();
-	                 },
-	                 
+	                 },                 
 	                 error: function (xhr, status, error) {
 	                	 var err = eval("(" + xhr.responseText + ")");
 	                	 console.log(err.Message);
 	                 }
 	             });
 	        },
+	        
 	        cancelar: function () {
 	            $.alert('Cancelado!');
 	        },
 	    }
-	});  */
+	});
 }
 
-function editarUsuario(id){
-	window.location.href = "/cliente/update/"+id;
+function editarUsuario(nomeDeUsuario){
+	window.location.href = "/usuario/update/"+nomeDeUsuario;
 }

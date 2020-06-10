@@ -1,23 +1,20 @@
 package edu.uniatenas.crm.usuario.entity;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.JoinColumn;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.NaturalId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
 @Entity
-public class Usuario implements UserDetails, Serializable{
+public class Usuario implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -30,12 +27,16 @@ public class Usuario implements UserDetails, Serializable{
 	private String cpf;
 	private boolean isAtivo = true;
 	
+	@Transient
+	private boolean checkBoxMarcado;
+	
 	@ManyToMany
     private List<Role> roles;
-	
+	//tem que passar o nome
 	public Usuario() {}
 
-	public Usuario(String login, String senha, String nomeCompleto, String cpf, boolean isAtivo, List<Role> roles) {
+	public Usuario(final String login, final String senha, final String nomeCompleto, final String cpf,
+			final boolean isAtivo, final List<Role> roles) {
 		this.login = login;
 		this.senha = senha;
 		this.nomeCompleto = nomeCompleto;
@@ -43,13 +44,12 @@ public class Usuario implements UserDetails, Serializable{
 		this.isAtivo = isAtivo;
 		this.roles = roles;
 	}
-	
-	
+
 	public String getLogin() {
 		return login;
 	}
 
-	public void setLogin(String login) {
+	public void setLogin(final String login) {
 		this.login = login;
 	}
 
@@ -57,7 +57,7 @@ public class Usuario implements UserDetails, Serializable{
 		return senha;
 	}
 
-	public void setSenha(String senha) {
+	public void setSenha(final String senha) {
 		this.senha = senha;
 	}
 
@@ -65,7 +65,7 @@ public class Usuario implements UserDetails, Serializable{
 		return nomeCompleto;
 	}
 
-	public void setNomeCompleto(String nomeCompleto) {
+	public void setNomeCompleto(final String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
 
@@ -73,7 +73,7 @@ public class Usuario implements UserDetails, Serializable{
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
+	public void setCpf(final String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -81,7 +81,7 @@ public class Usuario implements UserDetails, Serializable{
 		return isAtivo;
 	}
 
-	public void setAtivo(boolean isAtivo) {
+	public void setAtivo(final boolean isAtivo) {
 		this.isAtivo = isAtivo;
 	}
 
@@ -89,7 +89,7 @@ public class Usuario implements UserDetails, Serializable{
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(final List<Role> roles) {
 		this.roles = roles;
 	}
 
@@ -111,14 +111,14 @@ public class Usuario implements UserDetails, Serializable{
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		final Usuario other = (Usuario) obj;
 		if (cpf == null) {
 			if (other.cpf != null)
 				return false;
@@ -151,43 +151,43 @@ public class Usuario implements UserDetails, Serializable{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
+		
 		return (Collection<? extends GrantedAuthority>) this.roles;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
+		
 		return this.senha;
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
+		
 		return this.nomeCompleto;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}	
 }

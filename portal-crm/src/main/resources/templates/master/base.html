@@ -1,237 +1,190 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>.: Sistema CRM - Uniatenas :.</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
- <link rel="icon" type="image/png" href="/dist/img/favicon.png" th:href="@{/dist/img/favicon.png}"/>
- 
-<link rel="stylesheet"
-	th:href="@{/plugins/fontawesome-free/css/all.min.css}"
-	href="plugins/fontawesome-free/css/all.min.css">
-<link rel="stylesheet"
-	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css}"
-	href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/icheck-bootstrap/icheck-bootstrap.min.css}"
-	href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-<link rel="stylesheet" th:href="@{/plugins/jqvmap/jqvmap.min.css}"
-	href="plugins/jqvmap/jqvmap.min.css">
-<link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}"
-	href="dist/css/adminlte.min.css">
-<link rel="stylesheet" th:href="@{/dist/css/adminlte.css}"
-	href="dist/css/adminlte.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}"
-	href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/daterangepicker/daterangepicker.css}"
-	href="plugins/daterangepicker/daterangepicker.css">
-<link rel="stylesheet"
-	th:href="@{/plugins/summernote/summernote-bs4.css}"
-	href="plugins/summernote/summernote-bs4.css">
-<script th:src="@{/plugins/jquery/jquery.min.js}"
-	src="plugins/jquery/jquery.min.js"></script>
-<script th:src="@{/plugins/jquery-ui/jquery-ui.min.js}"
-	src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<script th:src="@{/plugins/jquery/jquery.mask.js}"
-	src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-	rel="stylesheet">
-<script th:src="@{/dist/js/adminlte.js}" src="dist/js/adminlte.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>.: Sistema CRM - Uniatenas :.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/dist/img/favicon.png" th:href="@{/dist/img/favicon.png}" />
+
+    <link rel="stylesheet" th:href="@{/plugins/fontawesome-free/css/all.min.css}" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" th:href="@{/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css}" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" th:href="@{/plugins/icheck-bootstrap/icheck-bootstrap.min.css}" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/plugins/jqvmap/jqvmap.min.css}" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" th:href="@{/dist/css/adminlte.css}" href="dist/css/adminlte.css">
+    <link rel="stylesheet" th:href="@{/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" th:href="@{/plugins/daterangepicker/daterangepicker.css}" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" th:href="@{/plugins/summernote/summernote-bs4.css}" href="plugins/summernote/summernote-bs4.css">
+    <script th:src="@{/plugins/jquery/jquery.min.js}" src="plugins/jquery/jquery.min.js"></script>
+    <script th:src="@{/plugins/jquery-ui/jquery-ui.min.js}" src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script th:src="@{/plugins/jquery/jquery.mask.js}" src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <script th:src="@{/dist/js/adminlte.js}" src="dist/js/adminlte.js"></script>
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
-	<aside class="main-sidebar sidebar-dark-primary elevation-4">
-		<a href="/cliente/lead" class="brand-link text-justify text-center text-wrap text-white">  
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a href="/cliente/lead" class="brand-link text-justify text-center text-wrap text-white">  
 			Sistema CRM
 		</a>
-		<div> 
-		<br>
-			<h4 class="text-justify text-center text-wrap text-white" th:text="'Bem Vindo: '+ ${nomeUsuario}"></h4>
-			<div class="d-flex justify-content-center">
-				<button class="btn btn-danger" type="button" onclick="window.location.href='/logout'">Sair</button>
-			</div>
-		</div>
-		<div class="sidebar">
-			<nav class="mt-2">
-				<ul class="nav nav-pills nav-sidebar flex-column"
-					data-widget="treeview" role="menu" data-accordion="false">
-					<li class="nav-item has-treeview menu-open"><a href="#"
-						class="nav-link active"> <i
-							class="nav-icon fas fa-address-book"> </i> Leads <i
-							class="right fas fa-angle-left"> </i>
-					</a>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/lead"
-								class="nav-link "> <i class="fa fa-user nav-icon"></i> Base
-									de Leads
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/prevestibular"
-								class="nav-link "> <i class="fa fa-book nav-icon"></i>
-									Pré-Vestibular
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/prematricula"
-								class="nav-link "> <i class="fa fa-book-reader nav-icon"></i>
-									Pré-Matricula
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/matriculados"
-								class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i>
-									Matriculados
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/pendentes"
-								class="nav-link "> <i class="fa fa-user-friends nav-icon"></i>
-									Pendentes
-							</a></li>
-						</ul>
-				</ul>
-			</nav>
-			<nav class="mt-2">
-				<ul class="nav nav-pills nav-sidebar flex-column"
-					data-widget="treeview" role="menu" data-accordion="false">
-					<li class="nav-item has-treeview menu-open"><a href="#"
-						class="nav-link active"> <i
-							class="nav-icon fas fa-address-book"> </i> Meus Leads <i
-							class="right fas fa-angle-left"> </i>
-					</a>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/lead"
-								class="nav-link "> <i class="fa fa-user nav-icon"></i> Base
-									de Leads
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/prevestibular"
-								class="nav-link "> <i class="fa fa-book nav-icon"></i>
-									Pré-Vestibular
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/prematricula"
-								class="nav-link "> <i class="fa fa-book-reader nav-icon"></i>
-									Pré-Matricula
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/matriculados"
-								class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i>
-									Matriculados
-							</a></li>
-						</ul>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/cliente/pendentes"
-								class="nav-link "> <i class="fa fa-user-friends nav-icon"></i>
-									Pendentes
-							</a></li>
-						</ul>
-				</ul>
-			</nav>
-			<nav class="mt-2">
-				<ul class="nav nav-pills nav-sidebar flex-column"
-					data-widget="treeview" role="menu" data-accordion="false">
-					<li class="nav-item has-treeview menu-open"><a href="#"
-						class="nav-link active"> <i
-							class="nav-icon fas fa-address-book"> </i> Administração <i
-							class="right fas fa-angle-left"> </i>
-					</a>
-						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="/usuario/todos"
-								class="nav-link "> <i class="fa fa-user nav-icon"></i> Base
-									de Usuários
-							</a></li>
-						</ul>				
-				</ul>
-			</nav>		
-		</div>
+        <div>
+            <br>
+            <h4 class="text-justify text-center text-wrap text-white" th:text="'Bem Vindo: '+ ${nomeUsuario}"></h4>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-warning" type="button" onclick="window.location.href='/usuario/minhaconta/'">Minha Conta</button>
+                <button class="btn btn-danger ml-3" type="button" onclick="window.location.href='/logout'">Sair</button>
+            </div>
+        </div>
+        <div class="sidebar">
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active"> <i class="nav-icon fas fa-address-book"> </i> Leads <i class="right fas fa-angle-left"> </i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/lead" class="nav-link "> <i class="fa fa-user nav-icon"></i> Base de Leads
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/prevestibular" class="nav-link "> <i class="fa fa-book nav-icon"></i> Pré-Vestibular
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/prematricula" class="nav-link "> <i class="fa fa-book-reader nav-icon"></i> Pré-Matricula
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/matriculados" class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i> Matriculados
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/pendentes" class="nav-link "> <i class="fa fa-user-friends nav-icon"></i> Pendentes
+                                </a>
+                            </li>
+                        </ul>
+                </ul>
+            </nav>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active"> <i class="nav-icon fas fa-address-book"> </i> Meus Leads <i class="right fas fa-angle-left"> </i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/lead" class="nav-link "> <i class="fa fa-user nav-icon"></i> Base de Leads
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/prevestibular" class="nav-link "> <i class="fa fa-book nav-icon"></i> Pré-Vestibular
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/prematricula" class="nav-link "> <i class="fa fa-book-reader nav-icon"></i> Pré-Matricula
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/matriculados" class="nav-link "> <i class="fa fa-graduation-cap nav-icon"></i> Matriculados
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/cliente/pendentes" class="nav-link "> <i class="fa fa-user-friends nav-icon"></i> Pendentes
+                                </a>
+                            </li>
+                        </ul>
+                </ul>
+            </nav>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active"> <i class="nav-icon fas fa-address-book"> </i> Administração <i class="right fas fa-angle-left"> </i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/usuario/todos" class="nav-link "> <i class="fa fa-user nav-icon"></i> Base de Usuários
+                                </a>
+                            </li>
+                        </ul>
+                </ul>
+            </nav>
+        </div>
 
-	</aside>
-	<div class="content-wrapper">
+    </aside>
+    <div class="content-wrapper">
 
-		<div class="content-header">
-			<div class="card-header">
-				<h3 class="card-title" layout:fragment="page-title">Page Title</h3>
-			</div>
-		</div>
+        <div class="content-header">
+            <div class="card-header">
+                <h3 class="card-title" layout:fragment="page-title">Page Title</h3>
+            </div>
+        </div>
 
-		<section class="content">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6"></div>
-				</div>
-				<div class="card card-primary">
-					<div class="card-header">
-						<h3 class="card-title" layout:fragment="form-title">Title</h3>
-					</div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title" layout:fragment="form-title">Title</h3>
+                    </div>
 
-					<ul>
-						<li th:each="e : ${#fields.detailedErrors()}"
-							th:class="${e.global}? globalerr : fielderr"><span
-							th:text="${e.global}? '*' : ${e.fieldName}"> The field
+                    <ul>
+                        <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr"><span th:text="${e.global}? '*' : ${e.fieldName}"> The field
 								name</span> | <span th:text="${e.message}">The error message</span></li>
-					</ul>
-					<div class="card-body" layout:fragment="content"></div>
-				</div>
-			</div>
-		</section>
-	</div>
-	<footer class="main-footer">
-		<strong>Copyright &copy; 2020 <a href="http://atenas.edu.br">Uniatenas</a>.
+                    </ul>
+                    <div class="card-body" layout:fragment="content"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2020 <a href="http://atenas.edu.br">Uniatenas</a>.
 		</strong> All rights reserved.
-		<div class="float-right d-none d-sm-inline-block">
-			<b>Version</b> 1.0.0
-		</div>
-	</footer>
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0.0
+        </div>
+    </footer>
 
-	<aside class="control-sidebar control-sidebar-dark"></aside>
-	<script>
-		$.widget.bridge('uibutton', $.ui.button)
-	</script>
-	<script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"
-		src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script th:src="@{/plugins/chart.js/Chart.min.js}"
-		src="plugins/chart.js/Chart.min.js"></script>
-	<script th:src="@{/plugins/sparklines/sparkline.js}"
-		src="plugins/sparklines/sparkline.js"></script>
-	<script th:src="@{/plugins/jquery-knob/jquery.knob.min.js}"
-		src="plugins/jquery-knob/jquery.knob.min.js"></script>
-	<script th:src="@{/plugins/moment/moment.min.js}"
-		src="plugins/moment/moment.min.js"></script>
-	<script th:src="@{/plugins/daterangepicker/daterangepicker.js}"
-		src="plugins/daterangepicker/daterangepicker.js"></script>
-	<script
-		th:src="@{/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js}"
-		src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-	<script th:src="@{/plugins/summernote/summernote-bs4.min.js}"
-		src="plugins/summernote/summernote-bs4.min.js"></script>
-	<script
-		th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}"
-		src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-	<script th:src="@{/dist/js/cad-cliente.js}"
-		src="dist/js/cad-cliente.js" charset="iso-8859-1"></script>
-		
-	<script th:src="@{/dist/js/list-cliente.js}"
-		src="dist/js/list-cliente.js" charset="iso-8859-1"></script>
-		
-		<script th:src="@{/dist/js/list-usuario.js}"
-		src="dist/js/list-usuario.js" charset="iso-8859-1"></script>
-	<script
-		th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js}"
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}" src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/plugins/chart.js/Chart.min.js}" src="plugins/chart.js/Chart.min.js"></script>
+    <script th:src="@{/plugins/sparklines/sparkline.js}" src="plugins/sparklines/sparkline.js"></script>
+    <script th:src="@{/plugins/jquery-knob/jquery.knob.min.js}" src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script th:src="@{/plugins/moment/moment.min.js}" src="plugins/moment/moment.min.js"></script>
+    <script th:src="@{/plugins/daterangepicker/daterangepicker.js}" src="plugins/daterangepicker/daterangepicker.js"></script>
+    <script th:src="@{/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js}" src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script th:src="@{/plugins/summernote/summernote-bs4.min.js}" src="plugins/summernote/summernote-bs4.min.js"></script>
+    <script th:src="@{/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}" src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script th:src="@{/dist/js/cad-cliente.js}" src="dist/js/cad-cliente.js" charset="iso-8859-1"></script>
+
+    <script th:src="@{/dist/js/list-cliente.js}" src="dist/js/list-cliente.js" charset="iso-8859-1"></script>
+
+    <script th:src="@{/dist/js/list-usuario.js}" src="dist/js/list-usuario.js" charset="iso-8859-1"></script>
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js}" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </body>
+
 </html>

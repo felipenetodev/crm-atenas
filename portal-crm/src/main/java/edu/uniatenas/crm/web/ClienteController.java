@@ -1,14 +1,10 @@
 package edu.uniatenas.crm.web;
 
 import java.util.InputMismatchException;
-import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.uniatenas.crm.cliente.entity.Cliente;
 import edu.uniatenas.crm.cliente.enums.Estado;
 import edu.uniatenas.crm.cliente.service.ClienteService;
-import edu.uniatenas.crm.usuario.entity.Role;
 import edu.uniatenas.crm.usuario.entity.Usuario;
-import edu.uniatenas.crm.usuario.enums.TipoRole;
 import edu.uniatenas.crm.usuario.service.UsuarioService;
 
 @Controller
