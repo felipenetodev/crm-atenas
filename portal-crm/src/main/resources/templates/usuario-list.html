@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master/base}">
+<h3 layout:fragment="page-title">Usuários</h3>
+<h3 layout:fragment="form-title">Cadastro de Usuários</h3>
+<div layout:fragment="content">
+    <button class="btn btn-sm btn-success" type="button" onclick="window.location.href='/usuario/novo'">Novo Usuário</button>
+    <hr></hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nome de Usuário</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${usuarios.empty}">
+                <td colspan="2">Sem Usuarios Cadastrados</td>
+            </tr>
+            <tr th:each="usuario : ${usuarios}" th:if="${usuario.isAtivo() != false}">
+                <td><span th:text="${usuario.login}"> </span></td>
+                <td><span th:text="${usuario.nomeCompleto}"> </span></td>
+                <td><span th:text="${usuario.cpf}"> </span></td>
+                <td style="text-align: center">
+                    <button class="btn btn-sm btn-warning" type="button" th:data-id="${usuario.getLogin()}" th:onclick="editarUsuario(this.getAttribute('data-id'))">Editar</button>
+                    <button class="btn btn-sm btn-danger" type="button" th:data-id="${usuario.getLogin()}" th:onclick="modalRemoverUsuario(this.getAttribute('data-id'))">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Paginação" class="mt-2">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+        </ul>
+    </nav>
+</div>
+
+</html>
